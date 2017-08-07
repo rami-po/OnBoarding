@@ -1,0 +1,81 @@
+$width: 750px;
+
+.form-card-small{
+  padding: 30px;
+  height: 375px;
+  width: $width;
+  margin-bottom: 25px;
+}
+
+.form-full-width {
+  width: 100%;
+  font-size: 20px;
+}
+
+button {
+  margin-bottom: 10px;
+}
+
+.medical-form {
+  width: $width;
+  margin:0 auto;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+.form-button {
+  width: 240px;
+  height: 70px;
+  margin: 20px;
+  font-size: 20px;
+}
+
+.plan-button {
+  width: 220px;
+  height: 60px;
+  margin: 10px;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.plan-button .tooltiptext {
+  visibility: hidden;
+  width: 400px;
+  top: 110%;
+  left: 50%;
+  margin-left: -200px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+.plan-button .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%;  /* At the top of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.plan-button:hover .tooltiptext {
+  visibility: visible;
+}

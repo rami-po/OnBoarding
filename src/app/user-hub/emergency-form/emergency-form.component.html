@@ -1,0 +1,68 @@
+<div align="center">
+  <md-card class="form-card">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+      <h3 class="form-title">Emergency Contact Information</h3>
+
+      <md-input-container class="form-half-full-width">
+        <input autocomplete="false" type="text" formControlName="lastName"
+          mdInput placeholder="Last Name*">
+      </md-input-container>
+      <md-input-container class="form-quarter-full-width">
+        <input autocomplete="false" type="text" formControlName="firstName"
+          mdInput placeholder="First Name*">
+      </md-input-container>
+      <md-input-container class="form-quarter-full-width">
+        <input autocomplete="false" type="text" formControlName="middleInitial"
+          mdInput placeholder="M.I">
+      </md-input-container>
+
+
+      <md-input-container class="form-three-fourths-full-width">
+        <input autocomplete="false" type="text" formControlName="streetAddress"
+          mdInput placeholder="Street Address*">
+      </md-input-container>
+      <md-input-container class="form-quarter-full-width">
+        <input autocomplete="false" type="text" formControlName="apartmentUnit"
+          mdInput placeholder="Apartment/Unit #">
+      </md-input-container>
+
+
+      <md-input-container class="form-half-full-width">
+        <input autocomplete="false" type="text" formControlName="city"
+               mdInput placeholder="City*">
+      </md-input-container>
+      <md-input-container class="form-quarter-full-width">
+        <input autocomplete="false" type="text" formControlName="state"
+               mdInput placeholder="State*">
+      </md-input-container>
+      <md-input-container class="form-quarter-full-width">
+        <input autocomplete="false" type="text" formControlName="zipCode"
+               mdInput placeholder="ZIP Code*">
+      </md-input-container>
+
+
+      <md-input-container class="form-half-full-width">
+        <input autocomplete="false" type="text" formControlName="primaryPhone"
+               mdInput placeholder="Primary Phone*">
+      </md-input-container>
+      <md-input-container class="form-half-full-width">
+        <input autocomplete="false" type="text" formControlName="altPhone"
+               mdInput placeholder="Alternate Phone">
+      </md-input-container>
+
+
+      <md-input-container class="form-full-width">
+        <input autocomplete="false" type="text" formControlName="relationship"
+               mdInput placeholder="Relationship">
+      </md-input-container>
+
+      <div class ="text-right">
+        <button md-raised-button
+                color="primary"
+                class="submit-button"
+                type="submit"
+                href="#">Submit</button>
+      </div>
+    </form>
+  </md-card>
+</div>

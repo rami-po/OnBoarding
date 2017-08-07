@@ -1,0 +1,94 @@
+<div align="center">
+
+  <md-card class="form-card">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+      <h3 class="form-title">Personal Information</h3>
+
+      <div class="form-container">
+
+        <md-input-container class="form-half-full-width">
+          <input autocomplete="false" type="text" formControlName="lastName"
+                 mdInput placeholder="Last Name*" [ngModel]="user.last_name">
+        </md-input-container>
+        <md-input-container class="form-quarter-full-width">
+          <input autocomplete="false" type="text" formControlName="firstName"
+                 mdInput placeholder="First Name*" [ngModel]="user.first_name">
+        </md-input-container>
+        <md-input-container class="form-quarter-full-width">
+          <input autocomplete="false" type="text" formControlName="middleInitial"
+                 mdInput placeholder="M.I">
+        </md-input-container>
+
+
+        <md-input-container class="form-three-fourths-full-width">
+          <input autocomplete="false" type="text" formControlName="streetAddress"
+                 mdInput placeholder="Street Address*">
+        </md-input-container>
+        <md-input-container class="form-quarter-full-width">
+          <input autocomplete="false" type="text" formControlName="apartmentUnit"
+                 mdInput placeholder="Apartment/Unit #">
+        </md-input-container>
+
+        <md-input-container class="form-half-full-width">
+          <input autocomplete="false" type="text" formControlName="city"
+                 mdInput placeholder="City*">
+        </md-input-container>
+        <md-input-container class="form-quarter-full-width">
+          <input autocomplete="false" type="text" formControlName="state"
+                 mdInput placeholder="State*">
+        </md-input-container>
+        <md-input-container class="form-quarter-full-width">
+          <input autocomplete="false" type="text" formControlName="zipCode"
+                 mdInput placeholder="ZIP Code*">
+        </md-input-container>
+
+
+        <md-input-container class="form-half-full-width">
+          <input autocomplete="false" type="text" formControlName="homePhone"
+                 mdInput placeholder="Home Phone*">
+        </md-input-container>
+        <md-input-container class="form-half-full-width">
+          <input autocomplete="false" type="text" formControlName="altPhone"
+                 mdInput placeholder="Alternate Phone">
+        </md-input-container>
+
+          <md-input-container class="form-full-width">
+            <input autocomplete="false" type="text" formControlName="birthday"
+                   mdInput placeholder="Birth date (MM/DD/YY)*">
+          </md-input-container>
+
+        <md-input-container class="form-full-width">
+          <input autocomplete="false" type="text" formControlName="spouseName"
+                 mdInput placeholder="Spouse's Name">
+        </md-input-container>
+        <md-input-container class="form-half-full-width">
+          <input autocomplete="false" type="text" formControlName="spouseEmployer"
+                 mdInput placeholder="Spouse's Employer">
+        </md-input-container>
+        <md-input-container class="form-half-full-width">
+          <input autocomplete="false" type="text" formControlName="spouseWorkPhone"
+                 mdInput placeholder="Spouse's Work Phone">
+        </md-input-container>
+
+        <md-select placeholder="Computer Preference*" formControlName="computer" name="computer">
+          <md-option *ngFor="let computer of computers" [value]="computer">
+            {{computer}}
+          </md-option>
+        </md-select>
+
+        <div class ="text-right">
+          <button md-raised-button
+                  color="primary"
+                  class="submit-button"
+                  type="submit"
+                  href="#">Submit</button>
+      </div>
+
+      </div>
+
+    </form>
+
+  </md-card>
+
+</div>

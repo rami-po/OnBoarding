@@ -1,0 +1,131 @@
+<div>
+  <div>
+    <md-progress-spinner
+      *ngIf="mode=='indeterminate'"
+      color="primary"
+      mode={{mode}}>
+    </md-progress-spinner>
+  </div>
+
+  <div *ngIf="mode=='determinate'">
+
+    <!-- REQUIRED -->
+
+    <div class="col-sm-6">
+      <h2 class="text-center">Required</h2>
+      <hr>
+      <div class ="text-center">
+        <button md-raised-button
+                color="primary"
+                class="submit-button"
+                type="submit"
+                (click)="navigateTo('personal')"
+                href="#">Personal Information Form</button>
+      </div>
+      <div class ="text-center">
+        <button md-raised-button
+                color="primary"
+                class="submit-button"
+                type="submit"
+                (click)="navigateTo('emergency')"
+                href="#">Emergency Contact Information Form</button>
+      </div>
+      <div *ngIf="!user.is_contractor" class ="text-center">
+        <button md-raised-button
+                color="primary"
+                class="submit-button"
+                type="submit"
+                (click)="openForm('W4')"
+                href="#">W-4 Form</button>
+      </div>
+
+      <div *ngIf="user.is_contractor" class ="text-center">
+        <button md-raised-button
+                color="primary"
+                class="submit-button"
+                type="submit"
+                (click)="openForm('W9')"
+                href="#">W-9 Form</button>
+      </div>
+
+      <div class ="text-center">
+        <button md-raised-button
+                color="primary"
+                class="submit-button"
+                type="submit"
+                (click)="openForm('I9')"
+                href="#">I-9 Form</button>
+      </div>
+
+      <div class ="text-center">
+        <button md-raised-button
+                color="primary"
+                class="submit-button"
+                type="submit"
+                (click)="openForm('handbook')"
+                href="#">Handbook/Acknowledgement Form</button>
+      </div>
+
+      <div class ="text-center">
+        <button md-raised-button
+                target="_blank"
+                color="primary"
+                class="submit-button"
+                type="submit"
+                (click)="openForm('at-will')">At-Will Agreement Form</button>
+      </div>
+
+      <div *ngIf="hasGithub" class ="text-center">
+        <button md-raised-button
+                target="_blank"
+                color="primary"
+                class="submit-button"
+                type="submit"
+                (click)="navigateTo('join')">Join Github</button>
+      </div>
+    </div>
+
+    <!-- OPTIONAL -->
+
+    <div class="col-sm-6">
+      <h2 class="text-center">Optional</h2>
+      <hr>
+      <div class="text-center">
+        <button md-raised-button
+                color="primary"
+                class="submit-button"
+                type="submit"
+                (click)="openForm('medical')"
+                href="#">Medical Form</button>
+      </div>
+
+      <div class ="text-center">
+        <button md-raised-button
+                color="primary"
+                class="submit-button"
+                type="submit"
+                (click)="openForm('dental')"
+                href="#">Dental Form</button>
+      </div>
+
+      <div class ="text-center">
+        <button md-raised-button
+                color="primary"
+                class="submit-button"
+                type="submit"
+                (click)="openForm('parking')"
+                href="#">Parking Form</button>
+      </div>
+
+      <div class ="text-center">
+        <button md-raised-button
+                color="primary"
+                class="submit-button"
+                type="submit"
+                (click)="openForm('401k')"
+                href="#">401k Form</button>
+      </div>
+
+    </div>
+  </div>
+</div>

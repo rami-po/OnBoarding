@@ -1,0 +1,46 @@
+<div class="medical-form">
+    <md-card class="form-card-small" >
+      <h3>Medical</h3>
+      <div class ="text-center">
+        <button md-raised-button
+                color="primary"
+                class="form-button"
+                type="submit"
+                (click)="open('Enrollment')"
+                href="#">Enroll Now</button>
+      </div>
+      <h4>productOps offers three medical benefit plans at minimal or no cost to you. Review each plan summary below. Once you’ve chosen a plan, click the Enroll Now button above to complete the enrollment form. For detailed premium cost estimates, please bring your dependent birthdate(s) and zip code(s) on your first day.</h4>
+      <div class="flex-center">
+        <div class ="text-center">
+          <button md-raised-button
+                  color="primary"
+                  class="plan-button"
+                  type="submit"
+                  (click)="open('Gold')"
+                  href="#">Gold Plan
+            <span class="tooltiptext">Low deductible PPO plan. Covers 50% dependent premiums.</span>
+          </button>
+        </div>
+        <div class ="text-center">
+          <button md-raised-button
+                  color="primary"
+                  class="plan-button"
+                  type="submit"
+                  (click)="open('Silver')"
+                  href="#">Silver Plan
+            <span class="tooltiptext">PPO plan with higher deductibles and lower co-pays. <br />Covers 50% dependent premiums.</span>
+          </button>
+        </div>
+        <div class ="text-center">
+          <button md-raised-button
+                  color="primary"
+                  class="plan-button"
+                  type="submit"
+                  (click)="open('HSA')"
+                  href="#">Silver Plan HSA
+            <span class="tooltiptext">Silver PPO plan plus a Health Savings Account with <br />employer contributions. Covers 50% dependent premiums.</span>
+          </button>
+        </div>
+      </div>
+    </md-card>
+</div>

@@ -1,0 +1,45 @@
+<div class="col-sm-6 col-sm-offset-3">
+    <md-card class="form-card-small">
+      <h3>Join Github</h3>
+      <h4>Create a new Github account using your productOps email and enter the username below.</h4>
+      <form [formGroup]="githubForm" (ngSubmit)="onSubmitGithub()">
+        <md-input-container class="form-full-width">
+          <input
+            formControlName="username"
+            autocomplete="false"
+            type="text"
+            mdInput placeholder="Username">
+        </md-input-container>
+
+        <div class ="text-right">
+          <button md-raised-button
+                  color="primary"
+                  class="submit-button"
+                  type="submit"
+                  href="#">Join Github</button>
+        </div>
+      </form>
+    </md-card>
+
+  <div *ngIf="hasSlack">
+    <h3>Join Slack</h3>
+    <md-card class="form-card-small">
+      <form [formGroup]="slackForm" (ngSubmit)="onSubmitSlack()">
+        <md-input-container class="form-full-width">
+          <input
+            formControlName="username"
+            autocomplete="false"
+            type="text"
+            mdInput placeholder="Username">
+        </md-input-container>
+        <div class ="text-right">
+          <button md-raised-button
+                  color="primary"
+                  class="submit-button"
+                  type="submit"
+                  href="#">Join Slack</button>
+        </div>
+      </form>
+    </md-card>
+  </div>
+</div>

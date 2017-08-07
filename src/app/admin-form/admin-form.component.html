@@ -1,0 +1,82 @@
+<div class="col-sm-6 col-sm-offset-3">
+  <md-progress-bar
+    *ngIf="mode=='indeterminate'"
+    class="example-margin"
+    color="primary"
+    mode={{mode}}>
+  </md-progress-bar>
+  <md-card class="form-card">
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+      <md-input-container class="form-full-width">
+        <input
+          autocomplete="false"
+          type="text"
+          mdInput placeholder="First Name"
+          formControlName="firstName">
+      </md-input-container>
+      <md-input-container class="form-full-width">
+        <input
+          autocomplete="false"
+          type="text"
+          mdInput placeholder="Last Name"
+          formControlName="lastName">
+      </md-input-container>
+      <md-input-container class="form-full-width">
+        <input
+          autocomplete="false"
+          type="email"
+          mdInput placeholder="Personal Email"
+          formControlName="personalEmail" email>
+      </md-input-container>
+      <md-input-container class="form-full-width">
+        <input
+          autocomplete="false"
+          type="text"
+          mdInput placeholder="productOps Email"
+          formControlName="productOpsEmail">
+        <span mdSuffix>@productOps.com</span>
+      </md-input-container>
+
+      <section class="checkbox-group">
+        <md-checkbox (click)="updateHarvest()">Harvest</md-checkbox>
+        <md-checkbox (click)="updateGithub()">Github</md-checkbox>
+        <md-checkbox *ngIf="false"(click)="updateSlack()">Slack</md-checkbox>
+      </section>
+
+      <md-radio-group formControlName="group">
+        <md-radio-button checked="true" value="Employee">Employee</md-radio-button>
+        <md-radio-button value="Contractor">Contractor</md-radio-button>
+        <md-radio-button value="Intern">Intern</md-radio-button>
+      </md-radio-group>
+
+
+      <md-select *ngIf="hasHarvest" placeholder="Projects" formControlName="project" name="project">
+        <md-option *ngFor="let project of projects" [value]="project">
+          {{project.name}}
+        </md-option>
+      </md-select>
+
+      <div class="date-picker">
+        <md-input-container>
+          <input formControlName="startDate" mdInput [mdDatepicker]="picker" placeholder="Choose a start date">
+          <button mdSuffix [mdDatepickerToggle]="picker"></button>
+        </md-input-container>
+        <md-datepicker #picker></md-datepicker>
+      </div>
+
+      <div class ="text-right">
+        <button md-button
+                type="button"
+                (click)="skip()"
+                class="skip-button"
+                href="#">Skip</button>
+        <button md-raised-button
+                color="primary"
+                class="submit-button"
+                type="submit"
+                href="#">Create Accounts</button>
+      </div>
+
+    </form>
+  </md-card>
+</div>

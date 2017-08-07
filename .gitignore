@@ -1,0 +1,6 @@
+harvest_secret.json
+sql_secret.json
+client_secret.json
+github_secret.json
+node_modules
+dist
