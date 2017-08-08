@@ -58,7 +58,7 @@ export class UserHubComponent implements OnInit {
         break;
       case 'handbook':
         window.open("./forms/handbook.pdf", "_blank");
-        window.open("./forms/handbook_acknowledgement.docx", "_blank");
+        window.open("./forms/handbook_acknowledgement.pdf", "_blank");
         break;
       case 'at-will':
         window.open("./forms/at-will_form.pdf", "_blank");

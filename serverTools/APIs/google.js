@@ -21,7 +21,7 @@ function makeBody(to, from, subject, message) {
 //Gmail API
 exports.sendConfirmationEmail = function(auth, userData, harvestUserData, onPostExecute) {
   if (harvestUserData != null){
-    var token = jwt.sign({harvestUserData: harvestUserData, userData: userData}, 'secret', {expiresIn: 7200});
+    var token = jwt.sign({harvestUserData: harvestUserData, userData: userData}, 'secret', {expiresIn: 604800});
     console.log(token);
   }
   var URL = "https://www.google.com/accounts/AccountChooser?Email=" + userData.productOpsEmail + "&continue=https://apps.google.com/user/hub";
@@ -45,7 +45,7 @@ exports.sendConfirmationEmail = function(auth, userData, harvestUserData, onPost
     'Password<br />' +
     'prod0p$2017<br /><br />' +
     '</li>';
-
+/*
   if (userData.hasGithub){
     message += '<li>Create a Github account with productOps information (e.g., name-po) using your new email at: ' + githubURL + '</li>';
   }
@@ -83,7 +83,7 @@ exports.sendConfirmationEmail = function(auth, userData, harvestUserData, onPost
       'Catherine Rumpanos<br />' +
       'Office Manager';
 
-  }
+  }*/
 
   var raw = makeBody(
     userData.personalEmail,
