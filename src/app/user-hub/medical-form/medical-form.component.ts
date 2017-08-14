@@ -15,7 +15,7 @@ export class MedicalFormComponent implements OnInit {
   open(form: string){
     switch(form){
       case 'Enrollment':
-        window.open("./forms/medical_form.pdf", "_blank");
+        window.open("./forms/anthem_enrollment_application.pdf", "_blank");
         break;
       case 'Gold':
         window.open("./forms/Summary_of_Benefits_PPO_Gold.pdf", "_blank");

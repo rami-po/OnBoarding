@@ -25,13 +25,13 @@ export class AdminFormService {
   }
 
   addUser(user: User) {
-  this.user = user;
-  const body = JSON.stringify(user);
-  const headers = new Headers({'Content-Type': 'application/json'});
-  return this.http.post('http://onboarding.productops.com/server/create/home', body, {headers: headers})
-    .map((response: Response) => response.json())
-    .catch((error: Response) => Observable.throw(error.json()));
-}
+    this.user = user;
+    const body = JSON.stringify(user);
+    const headers = new Headers({'Content-Type': 'application/json'});
+    return this.http.post('http://onboarding.productops.com/server/create/home', body, {headers: headers})
+      .map((response: Response) => response.json())
+      .catch((error: Response) => Observable.throw(error.json()));
+  }
   getUser() {
     return this.user;
   }

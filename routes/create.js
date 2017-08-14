@@ -32,10 +32,10 @@ router.post('/home', function (req, res, next) {
     if (err) {
       console.log('Error loading client secret file: ' + err);
       returnResponse(createRes, err.code, 'Error loading client secret file: ', err + '', false);
-    } else{
+    } else{/*
       emailCheck(userData.personalEmail)
         .then(function (res) {
-          if (res === true){
+          if (res === true){*/
             // Authorize a client with the loaded credentials
             googleAuth.authorize(JSON.parse(content), function(auth) {
               googleTools.createUser(auth, userData, function(err, response){
@@ -75,6 +75,7 @@ router.post('/home', function (req, res, next) {
                 }
               });
             });
+          /*
           }
           else{
             returnResponse(createRes, 500, 'An error occurred', 'Primary email does not exist.', false)
@@ -82,7 +83,7 @@ router.post('/home', function (req, res, next) {
         })
         .catch(function (err) {
           returnResponse(createRes, 500, 'An error occurred', err + '', false);
-        });
+        });*/
     }
   });
 

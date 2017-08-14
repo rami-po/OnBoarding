@@ -31,29 +31,29 @@ exports.sendConfirmationEmail = function(auth, userData, harvestUserData, onPost
   var message =
     'Hello ' + userData.firstName + ' ' + userData.lastName + ',' +
     '<br /><br />' +
-    'Welcome to the productOps team! We\'re so excited to have you join on ' + userData.startDate + '.' +
-    '<br /><br />' +
+    'Welcome to the productOps team! We\'re so excited to have you join at 9:00am on ' + userData.startDate + '.' +
+    '<br /><br />' /*+
     'Below is what you can expect in the days leading up to and on your first day.' +
     '<br /><br />' +
     '<b>Before your first day, please complete the following:</b>' +
     '<br /><br /><ol><li>' +
-    'Please login to your new productOps Account by signing in <a href="' + URL + '">here</a> with the following account details:' +
+    'Please login to your new productOps email account by signing in <a href="' + URL + '">here</a> with the following account details:' +
     '<br /><br />' +
     'Username<br />' +
     userData.productOpsEmail +
     '<br /><br />' +
     'Password<br />' +
-    'prod0p$2017<br /><br />' +
-    '</li>';
-/*
+    'prod0p$2017<br /><br />';
+
+
   if (userData.hasGithub){
     message += '<li>Create a Github account with productOps information (e.g., name-po) using your new email at: ' + githubURL + '</li>';
   }
-
+*/
   if (harvestUserData != null) {
 
     message +=
-      '<li>Please visit <a href="onboarding.productops.com/user?token=' + token + '">our OnBoarding page</a> to review, fill out and print the following forms: <br /><ul>' +
+      '<li>Please visit <a href="onboarding.productops.com/user?token=' + token + '">our OnBoarding page</a> to review, fill out and print the following forms: <br /><ul style="list-style-type:circle">' +
       '<li>Personal Information Form (complete online)</li>' +
       '<li>Emergency Contact Form (complete online)</li>' +
       '<li>IRS W-4 Form (Employee Withholding Allowance)(complete online and print)</li>' +
@@ -66,7 +66,7 @@ exports.sendConfirmationEmail = function(auth, userData, harvestUserData, onPost
       '<li>Dental Application (optional; complete and print)*</li></ul><br /><br />' +
       '<li>Be prepared to bring your passport or eligible ID and Social Security Card so I can finalize your I-9 paperwork on day one.</li><br />' +
       '<li>Be prepared to bring a bank account information for direct deposit (a voided check will work)</li></ol><br />' +
-      '<b>*NOTE: You\'ll have until XX days after your start date to complete your medical and dental insurance enrollment. On your first day, I can provide you with premium costs from our broker.</b><br /><br />' +
+      //'<b>*NOTE: You\'ll have until XX days after your start date to complete your medical and dental insurance enrollment. On your first day, I can provide you with premium costs from our broker.</b><br /><br />' +
       '<b>On your first day:</b><br /><ol>' +
       '<li>Please plan to arrive at 9:00am on ' + userData.startDate + ' at 1347 Pacific Avenue. Ring the buzzer upon your arrival and Chloe will let you in.</li><br />' +
       '<r >Meet with me to:<ul>' +
@@ -83,7 +83,7 @@ exports.sendConfirmationEmail = function(auth, userData, harvestUserData, onPost
       'Catherine Rumpanos<br />' +
       'Office Manager';
 
-  }*/
+  }
 
   var raw = makeBody(
     userData.personalEmail,
