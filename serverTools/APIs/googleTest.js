@@ -7,13 +7,17 @@ var googleAuth = require('../googleAuth');
 var googleTools = require('./google');
 
 var testData = {
-  "firstName": "first_name!!",
-  "lastName": "last_name!!",
-  "personalEmail": "ramikhadder@gmail.com",
-  "productOpsEmail": "product_ops",
-  "hasGithub": true,
-  "hasSlack": false
-};
+  firstName: 'Rami',
+  lastName: 'Test',
+  personalEmail: 'rami.khadder@productops.com',
+  productOpsEmail: 'null',
+  hasHarvest: true,
+  hasGithub: true,
+  hasSlack: false,
+  group: 'Employee',
+  project: { id: 8126466, name: 'PCS' },
+  startDate: 'Mon Aug 14 2017' };
+
 
 function testSendEmail(harvestUserData){
   fs.readFile('client_secret.json', function processClientSecrets(err, content) {
@@ -22,12 +26,12 @@ function testSendEmail(harvestUserData){
     }
     else {
       googleAuth.authorize(JSON.parse(content), function(auth) {
-        googleTools.sendConfirmationEmail(auth, testData, harvestUserData, function(err, response){
+        googleTools.sendProjectManagerEmail(auth, testData, function(err, response){
           if (err) {
-            console.log("err: " + err);
+            console.log("err: " + JSON.stringify(err));
           }
           else {
-            console.log("swag: " + response);
+            console.log("swag: " + JSON.stringify(response));
           }
         });
       });

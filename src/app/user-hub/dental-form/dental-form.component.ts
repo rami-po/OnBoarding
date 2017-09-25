@@ -10,7 +10,7 @@ export class DentalFormComponent implements OnInit {
   constructor() { }
 
   open(){
-    window.open("./forms/ameritas_dental_enrollment_form.pdf", "_blank");
+    window.open("./forms/dental_cost_sheet_enrollment_form.pdf", "_blank");
   }
 
   ngOnInit() {

@@ -87,23 +87,15 @@ export class AdminFormComponent implements OnInit {
         this.myForm.value.project,
         this.myForm.value.startDate.toDateString());
 
-      const dialogRef = this.dialog;
-
       this.formService.addUser(user)
         .subscribe(
           function (response) {
             this.mode = 'determinate';
             this.openDialog(true, response.title, response.message);
-            /*
-            if (this.hasGithub || this.hasSlack) {
-              this.router.navigate(['/create', 'options', this.hasGithub, this.hasSlack]);
-            } else {
-              console.log('nothing yet.');
-            }*/
           }.bind(this),
           function (error) {
             this.mode = 'determinate';
-            this.openDialog(true, error.title, error.message);
+            this.openDialog(false, error.title, error.message);
           }.bind(this)
         );
     }

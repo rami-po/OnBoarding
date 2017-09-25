@@ -18,6 +18,17 @@ exports.getUser = function(user, onPostExecute){
   });
 };
 
+exports.getProjectManagers = function(projectId, onPostExecute) {
+  connection.query("SELECT e.email " +
+    "FROM employees e " +
+    "RIGHT OUTER JOIN assignments a ON a.project_id = " + projectId + " AND e.id = a.user_id " +
+    "WHERE a.deactivated = 0 " +
+    "AND a.is_project_manager = 1 " +
+    "AND e.is_active = 1", function (err, result) {
+    onPostExecute(err, result);
+  })
+};
+
 exports.updateEmergencyContacts = function (emergencyContact, onPostExecute){
   connection.query("INSERT INTO emergencyContacts (id, first_name, last_name, middle_initial, " +
     "street_address, apartment_unit, city, state, zip_code, primary_phone, alternate_phone, " +

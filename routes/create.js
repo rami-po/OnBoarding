@@ -57,7 +57,13 @@ router.post('/home', function (req, res, next) {
                             assignUserToProject(userData.productOpsEmail, 194910/*internal*/, userData, auth, function(){
                               if (userData.project != null){
                                 assignUserToProject(userData.productOpsEmail, userData.project.id, userData, auth, function(){
-                                  sendConfirmationEmail(auth, userData, result);
+                                  googleTools.sendProjectManagerEmail(auth, userData, function (err, response) {
+                                    if (err) {
+                                      returnResponse(createRes, 500, '', err + '', true, userData, auth);
+                                    } else {
+                                      sendConfirmationEmail(auth, userData, result);
+                                    }
+                                  });
                                 })
                               }
                               else {
