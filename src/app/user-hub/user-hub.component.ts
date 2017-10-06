@@ -99,7 +99,12 @@ export class UserHubComponent implements OnInit {
         this.validateToken(query);
       }
       else {
-        this.validateToken(JSON.parse(localStorage.getItem('token')).token);
+        if (localStorage.getItem('token')) {
+          this.validateToken(JSON.parse(localStorage.getItem('token')).token);
+        } else {
+          localStorage.clear();
+          this.router.navigate(['/404']);
+        }
       }
     });
 

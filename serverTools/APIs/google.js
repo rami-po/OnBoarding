@@ -32,11 +32,11 @@ exports.sendConfirmationEmail = function(auth, userData, harvestUserData, onPost
   var message =
     'Hello ' + userData.firstName + ' ' + userData.lastName + ',' +
     '<br /><br />' +
-    'Welcome to the productOps team! We\'re so excited to have you join at 9:30am on ' + userData.startDate + '.' +
+    'Welcome to the productOps team! We\'re so excited to have you join at 9:00am on ' + userData.startDate + '.' +
     '<br /><br />' +
     'Below is what you can expect in the days leading up to and on your first day.' +
     '<br /><br />' +
-    '<b>Before your first day, please complete the following (Step 2 will be completed in the office):</b>' +
+    '<b>Before your first day, please complete the following:</b>' +
     '<br /><br /><ol><li>' +
     'Please login to your new productOps email account by signing in <a href="' + URL + '">here</a> with the following account details:' +
     '<br /><br />' +
@@ -72,7 +72,7 @@ exports.sendConfirmationEmail = function(auth, userData, harvestUserData, onPost
       '<li>Be prepared to bring bank account information for direct deposit (a voided check will work)</li></ol><br />' +
       //'<b>*NOTE: You\'ll have until XX days after your start date to complete your medical and dental insurance enrollment. On your first day, I can provide you with premium costs from our broker.</b><br /><br />' +
       '<b>On your first day:</b><br /><ol>' +
-      '<li>Please plan to arrive at 9:30am on ' + userData.startDate + ' at 1347 Pacific Avenue. Ring the buzzer upon your arrival and Chloe will let you in.</li><br />' +
+      '<li>Please plan to arrive at 9:00am on ' + userData.startDate + ' at 1347 Pacific Avenue. Ring the buzzer upon your arrival and Chloe will let you in.</li><br />' +
       '<li>Meet with me to:<ul>' +
       '<li>Take a tour of the office</li>' +
       '<li>Settle into your new workplace</li>' +

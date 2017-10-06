@@ -21,7 +21,7 @@ router.post('/', function (req, res, next) {
     else if (result.length <= 0){
       return res.status(401).json({
         title: 'Login failed',
-        message: 'User not found'
+        message: 'Invalid login credentials'
       });
     }
     else {
