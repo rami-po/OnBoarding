@@ -31,7 +31,6 @@ var harvestUserData = {
     "is_active": true,
     "has_access_to_all_future_projects": false,
     "default_hourly_rate": 0,
-    "department": "",
     "cost_rate": null
   }
 };
