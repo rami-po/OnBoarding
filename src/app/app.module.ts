@@ -27,6 +27,12 @@ import {UserHubService} from "./user-hub/user-hub.service";
 import {UserLogInComponent} from './user-log-in/user-log-in.component';
 import {MedicalFormComponent} from './user-hub/medical-form/medical-form.component';
 import {DentalFormComponent} from './user-hub/dental-form/dental-form.component';
+import { AdminConsoleComponent } from './admin-console/admin-console.component';
+import { AdminEmployeesComponent } from './admin-employees/admin-employees.component';
+import { AdminEmployeesSideListComponent } from './admin-employees/admin-employees-side-list/admin-employees-side-list.component';
+import {AppService} from "./app.service";
+import { AdminEmployeesPersonalViewComponent } from './admin-employees/admin-employees-personal-view/admin-employees-personal-view.component';
+import { AdminEmployeesEmergencyViewComponent } from './admin-employees/admin-employees-emergency-view/admin-employees-emergency-view.component';
 
 
 @NgModule({
@@ -42,7 +48,12 @@ import {DentalFormComponent} from './user-hub/dental-form/dental-form.component'
     NotFoundComponent,
     UserLogInComponent,
     MedicalFormComponent,
-    DentalFormComponent
+    DentalFormComponent,
+    AdminConsoleComponent,
+    AdminEmployeesComponent,
+    AdminEmployeesSideListComponent,
+    AdminEmployeesPersonalViewComponent,
+    AdminEmployeesEmergencyViewComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +74,7 @@ import {DentalFormComponent} from './user-hub/dental-form/dental-form.component'
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [AdminFormAuthGuard, UserHubAuthGuard, UserHubService],
+  providers: [AdminFormAuthGuard, UserHubAuthGuard, UserHubService, AppService],
   entryComponents: [
     StatusMessageDialogComponent
   ],

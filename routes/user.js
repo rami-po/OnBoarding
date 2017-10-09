@@ -80,4 +80,21 @@ router.post('/emergency', function (req, res, next) {
   });
 });
 
+router.get('/info', function (req, res, next) {
+  SQL.getInformationAndContacts(function (err, result) {
+    if (err){
+      return res.status(500).json({
+        title: "An error has occurred!",
+        result: err
+      });
+    }
+    else{
+      return res.status(200).json({
+        title: "Success!",
+        result: result
+      });
+    }
+  });
+});
+
 module.exports = router;

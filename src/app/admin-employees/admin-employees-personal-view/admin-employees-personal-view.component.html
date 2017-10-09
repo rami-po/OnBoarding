@@ -1,0 +1,24 @@
+<div align="center">
+
+  <md-card *ngIf="employee" class="form-card">
+
+      <h3 class="form-title">Personal Information</h3>
+
+      <div class="form-container">
+
+        <div><b><u>Name:</u></b> {{employee.first_name}} {{(!isNorD(employee.middle_initial) ? employee.middle_initial + ' ' : '')}}{{employee.last_name}}</div>
+        <div><b><u>Address:</u></b> {{employee.p_street_address}}, {{employee.p_city}}, {{employee.p_state}} {{employee.p_zip_code}}</div>
+        <div><b><u>Apartment/Unit #:</u></b> {{employee.p_apartment_unit}}</div>
+        <div><b><u>Home phone:</u></b> {{employee.p_home_phone}}</div>
+        <div><b><u>Alternate phone:</u></b> {{employee.p_alternate_phone}}</div>
+        <div><b><u>Birthday:</u></b> {{employee.birthday}}</div>
+        <div><b><u>Spouse's Name:</u></b> {{employee.spouse_name}}</div>
+        <div><b><u>Spouse's Employer:</u></b> {{employee.spouse_employer}}</div>
+        <div><b><u>Spouse's Work Phone:</u></b> {{employee.spouse_work_phone}}</div>
+
+      </div>
+
+
+  </md-card>
+
+</div>

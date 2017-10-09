@@ -11,6 +11,8 @@ import {UserHubAuthGuard} from "./user-hub/user-hub.auth.guard";
 import {UserLogInComponent} from "./user-log-in/user-log-in.component";
 import {MedicalFormComponent} from "./user-hub/medical-form/medical-form.component";
 import {DentalFormComponent} from "./user-hub/dental-form/dental-form.component";
+import {AdminConsoleComponent} from "./admin-console/admin-console.component";
+import {AdminEmployeesComponent} from "./admin-employees/admin-employees.component";
 /**
  * Created by Rami Khadder on 7/17/2017.
  */
@@ -40,6 +42,16 @@ const APP_ROUTES: Routes = [
         canActivate: [AdminFormAuthGuard],
         path: 'create',
         component: AdminFormComponent
+      },
+      {
+        canActivate: [AdminFormAuthGuard],
+        path: 'console',
+        component: AdminConsoleComponent
+      },
+      {
+        canActivate: [AdminFormAuthGuard],
+        path: 'employees',
+        component: AdminEmployeesComponent
       }
     ]
   },

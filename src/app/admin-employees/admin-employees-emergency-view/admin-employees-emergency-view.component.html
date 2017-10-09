@@ -1,0 +1,13 @@
+<div align="center">
+  <md-card *ngIf="employee" class="form-card">
+    <h3 class="form-title">Emergency Contact Information</h3>
+
+    <div><b><u>Name:</u></b> {{employee.ec_first_name}} {{(!isNorD(employee.ec_middle_initial) ? employee.ec_middle_initial + ' ' : '')}}{{employee.ec_last_name}}</div>
+    <div><b><u>Address:</u></b> {{employee.ec_street_address}}, {{employee.ec_city}}, {{employee.ec_state}} {{employee.ec_zip_code}}</div>
+    <div><b><u>Apartment/Unit #:</u></b> {{employee.ec_apartment_unit}}</div>
+    <div><b><u>Primary:</u></b> {{employee.ec_primary_phone}}</div>
+    <div><b><u>Alternate:</u></b> {{employee.ec_alternate_phone}}</div>
+    <div><b><u>Relationship</u></b> {{employee.relationship}}</div>
+
+  </md-card>
+</div>

@@ -97,3 +97,21 @@ exports.updatePersonalInformation = function(personalInformation, onPostExecute)
       onPostExecute(err);
     });
 };
+
+exports.getInformationAndContacts = function (callback) {
+  connection.query('SELECT e.id, e.email, e.first_name, e.last_name, ' +
+    'p.middle_initial, p.street_address as p_street_address, p.apartment_unit as p_apartment_unit, ' +
+    'p.city as p_city, p.state as p_state, p.zip_code as p_zip_code, p.home_phone as p_home_phone, ' +
+    'p.alternate_phone as p_alternate_phone, p.birthday, p.spouse_name, p.spouse_employer, p.spouse_work_phone, ' +
+    'p.computer, ec.first_name as ec_first_name, ec.last_name as ec_last_name, ec.middle_initial as ec_middle_initial, ' +
+    'ec.street_address as ec_street_address, ec.apartment_unit as ec_apartment_unit, ec.city as ec_city, ' +
+    'ec.state as ec_state, ec.zip_code as ec_zip_code, ec.primary_phone as ec_primary_phone, ' +
+    'ec.alternate_phone as ec_alternate_phone, ec.relationship FROM employees e ' +
+    'LEFT OUTER JOIN personalInformation p ON e.id = p.id ' +
+    'LEFT OUTER JOIN emergencyContacts ec ON e.id = ec.id ' +
+    'WHERE e.is_active = 1 ' +
+    'AND p.street_address IS NOT NULL ' +
+    'ORDER BY e.last_name', function (err, result) {
+      callback(err, result);
+  })
+};

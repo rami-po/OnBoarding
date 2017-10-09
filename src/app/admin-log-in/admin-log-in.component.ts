@@ -33,7 +33,7 @@ export class AdminLogInComponent implements OnInit {
         .subscribe(
           function(response){
             sessionStorage.setItem('adminUser', JSON.stringify({username: response.user, token: response.token}));
-            this.router.navigate(['/admin', 'create']);
+            this.router.navigate(['/admin', 'console']);
           }.bind(this),
           function(error){
             this.openErrorDialog(error.title, error.message);

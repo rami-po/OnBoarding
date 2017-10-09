@@ -1,0 +1,3 @@
+<div class="column">
+  <div class="user" [style.font-weight]="(employee.selected ? 'bold' : 'normal')" (click)="select(employee)" *ngFor="let employee of employees">{{employee.first_name}} {{employee.last_name}}</div>
+</div>

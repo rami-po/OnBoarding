@@ -46,7 +46,7 @@ export class AdminFormComponent implements OnInit {
     private router: Router
   ) {}
 
-  skip(){
+  more(){
     const navigationExtras: NavigationExtras = {
       queryParams: { 'hasGithub': this.hasGithub }
     };
