@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6590123-0130-4b7a-8a51-4ebb351f425e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/login.js" afterPath="$PROJECT_DIR$/routes/login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/user.js" afterPath="$PROJECT_DIR$/routes/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/serverTools/APIs/google.js" afterPath="$PROJECT_DIR$/serverTools/APIs/google.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin-console/admin-console.component.html" afterPath="$PROJECT_DIR$/src/app/admin-console/admin-console.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin-console/admin-console.component.ts" afterPath="$PROJECT_DIR$/src/app/admin-console/admin-console.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin-form/admin-form.auth.guard.ts" afterPath="$PROJECT_DIR$/src/app/admin-form/admin-form.auth.guard.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin-log-in/admin-log-in.component.html" afterPath="$PROJECT_DIR$/src/app/admin-log-in/admin-log-in.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin-log-in/admin-log-in.component.scss" afterPath="$PROJECT_DIR$/src/app/admin-log-in/admin-log-in.component.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin-log-in/admin-log-in.component.ts" afterPath="$PROJECT_DIR$/src/app/admin-log-in/admin-log-in.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.service.ts" afterPath="$PROJECT_DIR$/src/app/app.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/user-log-in/user-log-in.component.html" afterPath="$PROJECT_DIR$/src/app/user-log-in/user-log-in.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/user-log-in/user-log-in.component.ts" afterPath="$PROJECT_DIR$/src/app/user-log-in/user-log-in.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -75,7 +60,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="google.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="google.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/serverTools/APIs/google.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1688">
@@ -109,31 +94,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="app.routing.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/app.routing.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1080">
+              <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.service.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/app.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1888">
+              <caret line="78" column="3" lean-forward="true" selection-start-line="78" selection-start-column="3" selection-end-line="78" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/login.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1050">
               <caret line="45" column="9" lean-forward="true" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/app.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2400">
-              <caret line="71" column="15" lean-forward="false" selection-start-line="71" selection-start-column="15" selection-end-line="72" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin-console.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/admin-console/admin-console.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="1" column="60" lean-forward="false" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -243,7 +228,6 @@
         <option value="$PROJECT_DIR$/src/app/admin-employees/admin-employees-emergency-view/admin-employees-emergency-view.component.html" />
         <option value="$PROJECT_DIR$/src/app/user-log-in/user-log-in.component.html" />
         <option value="$PROJECT_DIR$/serverTools/secrets/oauth.json" />
-        <option value="$PROJECT_DIR$/src/app/app.service.ts" />
         <option value="$PROJECT_DIR$/routes/login.js" />
         <option value="$PROJECT_DIR$/src/app/admin-console/admin-console.component.html" />
         <option value="$PROJECT_DIR$/src/app/user-log-in/user-log-in.component.ts" />
@@ -258,6 +242,7 @@
         <option value="$PROJECT_DIR$/src/app/admin-log-in/admin-log-in.component.html" />
         <option value="$PROJECT_DIR$/src/app/admin-form/admin-form.auth.guard.ts" />
         <option value="$PROJECT_DIR$/serverTools/APIs/google.js" />
+        <option value="$PROJECT_DIR$/src/app/app.service.ts" />
       </list>
     </option>
   </component>
@@ -1117,12 +1102,12 @@
       <workItem from="1506444053742" duration="1287000" />
       <workItem from="1507135343315" duration="102000" />
       <workItem from="1507318442295" duration="58449000" />
-      <workItem from="1507949833619" duration="6676000" />
+      <workItem from="1507949833619" duration="7100000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="493657000" />
+    <option name="totallyTimeSpent" value="494081000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1420,6 +1405,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="30" column="22" lean-forward="false" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1467,6 +1453,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="29" column="15" lean-forward="false" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1497,22 +1484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.routing.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2400">
-          <caret line="71" column="15" lean-forward="false" selection-start-line="71" selection-start-column="15" selection-end-line="72" selection-end-column="23" />
           <folding />
         </state>
       </provider>
@@ -1592,6 +1563,22 @@
           <folding>
             <marker date="1508179736528" expanded="true" signature="2412:2434" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.routing.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="41" column="32" lean-forward="false" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1888">
+          <caret line="78" column="3" lean-forward="true" selection-start-line="78" selection-start-column="3" selection-end-line="78" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>

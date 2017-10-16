@@ -73,7 +73,7 @@ export class AppService {
     console.log('boi');
     const body = JSON.stringify({token: token});
     const headers = new Headers({'Content-Type': 'application/json'});
-    return this.http.post('http://localhost/server/user/auth', body, {headers: headers})
+    return this.http.post('http://onboarding/server/user/auth', body, {headers: headers})
       .map((response: Response) => response.json())
       .catch((error: Response) => Observable.throw(error.json()));
   }
