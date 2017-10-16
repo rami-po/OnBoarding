@@ -68,4 +68,13 @@ export class AppService {
       .map((response: Response) => response.json())
       .catch((error: Response) => Observable.throw(error.json()));
   }
+
+  auth(token) {
+    console.log('boi');
+    const body = JSON.stringify({token: token});
+    const headers = new Headers({'Content-Type': 'application/json'});
+    return this.http.post('http://localhost/server/user/auth', body, {headers: headers})
+      .map((response: Response) => response.json())
+      .catch((error: Response) => Observable.throw(error.json()));
+  }
 }

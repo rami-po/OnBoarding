@@ -223,3 +223,14 @@ exports.grantUserAccessToDrive = function(auth, fileId, userData, onPostExecute)
     onPostExecute(err, response);
   });
 };
+
+exports.getMemberFromGroup = function (auth, id, onPostExecute) {
+  var service = google.admin('directory_v1');
+  service.members.get({
+    auth: auth,
+    groupKey: 'onboarding-access@productops.com',
+    memberKey: id
+  }, function(err, response){
+    onPostExecute(err, response);
+  });
+};

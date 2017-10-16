@@ -33,6 +33,7 @@ import { AdminEmployeesSideListComponent } from './admin-employees/admin-employe
 import {AppService} from "./app.service";
 import { AdminEmployeesPersonalViewComponent } from './admin-employees/admin-employees-personal-view/admin-employees-personal-view.component';
 import { AdminEmployeesEmergencyViewComponent } from './admin-employees/admin-employees-emergency-view/admin-employees-emergency-view.component';
+import { AuthService, AppGlobals } from 'angular2-google-login';
 
 
 @NgModule({
@@ -74,7 +75,7 @@ import { AdminEmployeesEmergencyViewComponent } from './admin-employees/admin-em
     ReactiveFormsModule,
     HttpModule
   ],
-  providers: [AdminFormAuthGuard, UserHubAuthGuard, UserHubService, AppService],
+  providers: [AdminFormAuthGuard, UserHubAuthGuard, UserHubService, AppService, AuthService],
   entryComponents: [
     StatusMessageDialogComponent
   ],
