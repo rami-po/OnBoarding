@@ -56,15 +56,15 @@ export class AdminLogInComponent implements OnInit, AfterViewInit {
       });
       this.googleAuth = gapi.auth2.getAuthInstance();
 
-      console.log(this.googleAuth.isSignedIn.get());
-
-      localStorage.setItem('adminToken', this.googleAuth.currentUser.get().getAuthResponse().id_token);
-
       this.verifyToken()
         .then(this.goToConsole.bind(this));
 
-
     });
+  }
+
+  logIn() {
+    this.verifyToken()
+      .then(this.goToConsole.bind(this));
   }
 
   isLoggedIn() {

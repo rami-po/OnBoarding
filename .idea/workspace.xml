@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e6590123-0130-4b7a-8a51-4ebb351f425e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin-log-in/admin-log-in.component.ts" afterPath="$PROJECT_DIR$/src/app/admin-log-in/admin-log-in.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.service.ts" afterPath="$PROJECT_DIR$/src/app/app.service.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -32,8 +31,8 @@
       <file leaf-file-name="admin-log-in.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/admin-log-in/admin-log-in.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1728">
-              <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+            <state relative-caret-position="808">
+              <caret line="56" column="53" lean-forward="false" selection-start-line="56" selection-start-column="53" selection-end-line="56" selection-end-column="53" />
               <folding>
                 <element signature="e#0#83#0" expanded="true" />
               </folding>
@@ -1103,12 +1102,12 @@
       <workItem from="1506444053742" duration="1287000" />
       <workItem from="1507135343315" duration="102000" />
       <workItem from="1507318442295" duration="58449000" />
-      <workItem from="1507949833619" duration="7508000" />
+      <workItem from="1507949833619" duration="7739000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="494489000" />
+    <option name="totallyTimeSpent" value="494720000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1346,6 +1345,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1038">
           <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1423,6 +1423,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="23" column="8" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1514,14 +1515,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/admin-log-in/admin-log-in.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1120">
-          <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/admin-form/admin-form.auth.guard.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1280">
@@ -1574,10 +1567,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/admin-log-in/admin-log-in.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1120">
+          <caret line="28" column="8" lean-forward="false" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/admin-log-in/admin-log-in.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1728">
-          <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+        <state relative-caret-position="808">
+          <caret line="56" column="53" lean-forward="false" selection-start-line="56" selection-start-column="53" selection-end-line="56" selection-end-column="53" />
           <folding>
             <element signature="e#0#83#0" expanded="true" />
           </folding>
