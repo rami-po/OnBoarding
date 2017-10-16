@@ -58,6 +58,12 @@ export class AdminLogInComponent implements OnInit, AfterViewInit {
 
       console.log(this.googleAuth.isSignedIn.get());
 
+      localStorage.setItem('adminToken', this.googleAuth.currentUser.get().getAuthResponse().id_token);
+
+      this.verifyToken()
+        .then(this.goToConsole.bind(this));
+
+
     });
   }
 
