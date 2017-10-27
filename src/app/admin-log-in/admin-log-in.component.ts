@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, NgZone, OnInit} from '@angular/core';
+import {AfterViewChecked, AfterViewInit, Component, ElementRef, NgZone, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AdminLogInService} from "./admin-log-in.service";
 import {StatusMessageDialogComponent} from "../status-message/status-message.component";
@@ -54,17 +54,25 @@ export class AdminLogInComponent implements OnInit, AfterViewInit {
         cookiepolicy: 'single_host_origin',
         scope: 'profile email'
       });
-      this.googleAuth = gapi.auth2.getAuthInstance();
 
-      this.verifyToken()
-        .then(this.goToConsole.bind(this));
+      // this.getAuth()
+      //   .then(this.verifyToken.bind(this))
+      //   .then(this.goToConsole.bind(this));
 
     });
   }
 
-  logIn() {
-    this.verifyToken()
-      .then(this.goToConsole.bind(this));
+  getAuth() {
+    return new Promise((resolve, reject) => {
+      this.googleAuth = gapi.auth2.getAuthInstance();
+      this.googleAuth.isSignedIn.listen(
+        isSignedIn => {
+          if (isSignedIn) {
+            resolve();
+          }
+        }
+      );
+    });
   }
 
   isLoggedIn() {
@@ -90,6 +98,7 @@ export class AdminLogInComponent implements OnInit, AfterViewInit {
 
   googleSignin() {
     return new Promise((resolve, reject) => {
+      this.googleAuth = gapi.auth2.getAuthInstance();
       this.googleAuth.signIn({scope: 'profile email'}).then(googleUser => {
         resolve();
       });
@@ -113,6 +122,7 @@ export class AdminLogInComponent implements OnInit, AfterViewInit {
 
 
   public signOut(): void {
+    this.googleAuth = gapi.auth2.getAuthInstance();
     this.googleAuth.signOut().then(function () {
       localStorage.removeItem('adminToken');
       console.log('User signed out.');
