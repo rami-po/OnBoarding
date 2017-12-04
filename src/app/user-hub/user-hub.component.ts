@@ -41,7 +41,7 @@ export class UserHubComponent implements OnInit {
         window.open("https://www.irs.gov/pub/irs-pdf/fw4.pdf", "_blank");
         break;
       case 'I9':
-        window.open("https://www.uscis.gov/sites/default/files/files/form/i-9.pdf", "_blank");
+        window.open("./forms/I9_form.pdf", "_blank");
         break;
       case 'W9':
         window.open("https://www.irs.gov/pub/irs-pdf/fw9.pdf", "_blank");
@@ -89,6 +89,10 @@ export class UserHubComponent implements OnInit {
           this.router.navigate(['/404']);
         }.bind(this)
       );
+  }
+
+  test() {
+    this.router.navigate(['/user', 'pdf']);
   }
 
   ngOnInit() {

@@ -34,6 +34,8 @@ import {AppService} from "./app.service";
 import { AdminEmployeesPersonalViewComponent } from './admin-employees/admin-employees-personal-view/admin-employees-personal-view.component';
 import { AdminEmployeesEmergencyViewComponent } from './admin-employees/admin-employees-emergency-view/admin-employees-emergency-view.component';
 import { AuthService, AppGlobals } from 'angular2-google-login';
+import { PDFViewerComponent } from './user-hub/pdf-viewer/pdf-viewer.component';
+import {PdfViewerComponent} from "ng2-pdf-viewer";
 
 
 @NgModule({
@@ -54,7 +56,9 @@ import { AuthService, AppGlobals } from 'angular2-google-login';
     AdminEmployeesComponent,
     AdminEmployeesSideListComponent,
     AdminEmployeesPersonalViewComponent,
-    AdminEmployeesEmergencyViewComponent
+    AdminEmployeesEmergencyViewComponent,
+    PDFViewerComponent,
+    PdfViewerComponent
   ],
   imports: [
     BrowserModule,

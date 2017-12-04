@@ -6,6 +6,7 @@ var router = express.Router();
 var SQL = require('../serverTools/SQL');
 var harvest = require('../serverTools/APIs/harvest');
 var jwt = require('jsonwebtoken');
+var tokenSecret = require('../serverTools/secrets/token_secret.json')
 var GoogleAuth = require('google-auth-library');
 var googleAuth = require('../serverTools/googleAuth');
 var googleTools = require('../serverTools/APIs/google');
@@ -82,7 +83,7 @@ router.post('/auth', function (req, res, next) {
 router.post('/home', function (req, res, next) {
   console.log("HOME: " + JSON.stringify(req.body));
 
-  jwt.verify(req.body.token, 'secret', function (err, token) {
+  jwt.verify(req.body.token, tokenSecret.secret, function (err, token) {
     if (err) {
       return res.status(500).json({
         title: "Error!",

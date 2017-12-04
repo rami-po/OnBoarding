@@ -36,6 +36,7 @@
     "jsonwebtoken": "^7.4.1",
     "morgan": "^1.8.2",
     "mysql": "^2.14.1",
+    "ng2-pdf-viewer": "^2.0.2",
     "path": "^0.12.7",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"

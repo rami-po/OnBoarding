@@ -60,4 +60,12 @@ export class AdminConsoleComponent implements OnInit, AfterViewInit {
     this.router.navigate(['/admin', route]);
   }
 
+  open(route) {
+    switch (route) {
+      case 'forecasting':
+        window.open("http://onboarding.productops.com:3000/all", "_blank");
+
+    }
+  }
+
 }

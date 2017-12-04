@@ -13,6 +13,7 @@ import {MedicalFormComponent} from "./user-hub/medical-form/medical-form.compone
 import {DentalFormComponent} from "./user-hub/dental-form/dental-form.component";
 import {AdminConsoleComponent} from "./admin-console/admin-console.component";
 import {AdminEmployeesComponent} from "./admin-employees/admin-employees.component";
+import {PDFViewerComponent} from "./user-hub/pdf-viewer/pdf-viewer.component";
 /**
  * Created by Rami Khadder on 7/17/2017.
  */
@@ -86,6 +87,11 @@ const APP_ROUTES: Routes = [
         canActivate: [UserHubAuthGuard],
         path: 'dental',
         component: DentalFormComponent
+      },
+      {
+        canActivate: [UserHubAuthGuard],
+        path: 'pdf',
+        component: PDFViewerComponent
       },
       {
         canActivate: [UserHubAuthGuard],

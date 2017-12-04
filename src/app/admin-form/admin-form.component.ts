@@ -46,11 +46,8 @@ export class AdminFormComponent implements OnInit {
     private router: Router
   ) {}
 
-  more(){
-    const navigationExtras: NavigationExtras = {
-      queryParams: { 'hasGithub': this.hasGithub }
-    };
-    //this.router.navigate(['/user']);
+  back(){
+    this.router.navigate(['/admin', 'console']);
     //this.router.navigate(['/create', 'options'], navigationExtras);
   }
   updateHarvest() {

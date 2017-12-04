@@ -36,6 +36,17 @@ export class AdminLogInComponent implements OnInit, AfterViewInit {
       username: new FormControl(null, null),
       password: new FormControl(null, null)
     });
+
+    if (localStorage.getItem('adminToken')) {
+      this.appService.auth(localStorage.getItem('adminToken')).subscribe(
+        e => {
+          console.log(e);
+          if (e) {
+            console.log('Already signed in.');
+            this.router.navigate(['/admin', 'console']);
+          }
+        });
+    }
   }
 
   ngAfterViewInit() {
@@ -54,6 +65,9 @@ export class AdminLogInComponent implements OnInit, AfterViewInit {
         cookiepolicy: 'single_host_origin',
         scope: 'profile email'
       });
+
+
+
 
       // this.getAuth()
       //   .then(this.verifyToken.bind(this))

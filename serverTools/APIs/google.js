@@ -4,6 +4,7 @@
 var google = require('googleapis');
 var jwt = require('jsonwebtoken');
 var SQL = require('../SQL');
+var tokenSecret = require('../secrets/token_secret.json')
 
 function makeBody(to, from, subject, message) {
   var str = ["Content-Type: text/html; charset=\"UTF-8\"\n",
@@ -22,7 +23,7 @@ function makeBody(to, from, subject, message) {
 //Gmail API
 exports.sendConfirmationEmail = function(auth, userData, harvestUserData, onPostExecute) {
   if (harvestUserData != null){
-    var token = jwt.sign({harvestUserData: harvestUserData, userData: userData}, 'secret', {expiresIn: 604800});
+    var token = jwt.sign({harvestUserData: harvestUserData, userData: userData}, tokenSecret.secret, {expiresIn: 604800});
     console.log(token);
   }
   var URL = "https://www.google.com/accounts/AccountChooser?Email=" + userData.productOpsEmail + "&continue=https://apps.google.com/user/hub";

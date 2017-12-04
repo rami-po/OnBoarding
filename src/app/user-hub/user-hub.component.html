@@ -75,6 +75,15 @@
                 (click)="openForm('at-will')">At-Will Agreement Form</button>
       </div>
 
+      <div class ="text-center">
+        <button md-raised-button
+                target="_blank"
+                color="primary"
+                class="submit-button"
+                type="submit"
+                (click)="test()">Test</button>
+      </div>
+
       <div *ngIf="hasGithub" class ="text-center">
         <button md-raised-button
                 target="_blank"
@@ -90,6 +99,7 @@
     <div class="col-sm-6">
       <h2 class="text-center">Optional</h2>
       <hr>
+      <!--
       <div class="text-center">
         <button md-raised-button
                 color="primary"
@@ -97,7 +107,7 @@
                 type="submit"
                 (click)="openForm('medical')"
                 href="#">Medical Form</button>
-      </div>
+      </div>-->
 
       <div class ="text-center">
         <button md-raised-button
