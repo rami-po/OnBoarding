@@ -2,23 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6590123-0130-4b7a-8a51-4ebb351f425e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/forms/I9_form.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/forms/W4_form.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/user-hub/pdf-viewer/pdf-viewer.component.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/user-hub/pdf-viewer/pdf-viewer.component.scss" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/app/user-hub/pdf-viewer/pdf-viewer.component.ts" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/user.js" afterPath="$PROJECT_DIR$/routes/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/serverTools/APIs/google.js" afterPath="$PROJECT_DIR$/serverTools/APIs/google.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin-console/admin-console.component.html" afterPath="$PROJECT_DIR$/src/app/admin-console/admin-console.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin-console/admin-console.component.ts" afterPath="$PROJECT_DIR$/src/app/admin-console/admin-console.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin-form/admin-form.component.html" afterPath="$PROJECT_DIR$/src/app/admin-form/admin-form.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin-form/admin-form.component.ts" afterPath="$PROJECT_DIR$/src/app/admin-form/admin-form.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/admin-log-in/admin-log-in.component.ts" afterPath="$PROJECT_DIR$/src/app/admin-log-in/admin-log-in.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.routing.ts" afterPath="$PROJECT_DIR$/src/app/app.routing.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/user-hub/user-hub.component.html" afterPath="$PROJECT_DIR$/src/app/user-hub/user-hub.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/user-hub/user-hub.component.ts" afterPath="$PROJECT_DIR$/src/app/user-hub/user-hub.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -44,52 +35,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="create.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/create.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="920">
-              <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1800">
-              <caret line="45" column="9" lean-forward="false" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/user.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4240">
-              <caret line="106" column="23" lean-forward="false" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="google.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/serverTools/APIs/google.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SQL.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/serverTools/SQL.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="4320">
               <caret line="108" column="20" lean-forward="false" selection-start-line="108" selection-start-column="20" selection-end-line="108" selection-end-column="20" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="726">
+              <caret line="41" column="17" lean-forward="false" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1760">
+              <caret line="44" column="38" lean-forward="false" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+              <folding>
+                <marker date="1512420310536" expanded="true" signature="0:2043" ph="{&quot;name&quot;: &quot;test-file&quot;...}" />
+                <marker date="1512420310536" expanded="true" signature="275:1126" ph="{&quot;@angular/animations&quot;: &quot;^4.3.0&quot;...}" />
+                <marker date="1512420310536" expanded="true" signature="1149:2041" ph="{&quot;@angular/cli&quot;: &quot;1.2.1&quot;...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -114,11 +91,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user-hub.component.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="user-hub.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/user-hub/user-hub.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1191">
               <caret line="109" column="15" lean-forward="false" selection-start-line="109" selection-start-column="15" selection-end-line="109" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.routing.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/app.routing.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1926">
+              <caret line="89" column="8" lean-forward="false" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -230,14 +217,12 @@
         <option value="$PROJECT_DIR$/serverTools/secrets/oauth.json" />
         <option value="$PROJECT_DIR$/routes/login.js" />
         <option value="$PROJECT_DIR$/src/app/user-log-in/user-log-in.component.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/index.html" />
         <option value="$PROJECT_DIR$/src/app/admin-log-in/admin-log-in.component.scss" />
         <option value="$PROJECT_DIR$/src/app/admin-log-in/admin-log-in.component.html" />
         <option value="$PROJECT_DIR$/src/app/admin-form/admin-form.auth.guard.ts" />
         <option value="$PROJECT_DIR$/src/app/app.service.ts" />
         <option value="$PROJECT_DIR$/serverTools/secrets/harvest_secret.json" />
-        <option value="$PROJECT_DIR$/src/app/app.routing.ts" />
         <option value="$PROJECT_DIR$/serverTools/secrets/token_secret.json" />
         <option value="$PROJECT_DIR$/serverTools/APIs/google.js" />
         <option value="$PROJECT_DIR$/routes/user.js" />
@@ -248,11 +233,13 @@
         <option value="$PROJECT_DIR$/src/app/admin-console/admin-console.component.ts" />
         <option value="$PROJECT_DIR$/src/app/admin-console/admin-console.component.html" />
         <option value="$PROJECT_DIR$/src/app/admin-log-in/admin-log-in.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/src/app/admin-form/admin-form.component.html" />
         <option value="$PROJECT_DIR$/src/app/admin-form/admin-form.component.ts" />
         <option value="$PROJECT_DIR$/src/app/user-hub/user-hub.component.ts" />
         <option value="$PROJECT_DIR$/src/app/user-hub/user-hub.component.html" />
+        <option value="$PROJECT_DIR$/src/app/app.routing.ts" />
+        <option value="$PROJECT_DIR$/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -1055,12 +1042,12 @@
       <workItem from="1510615345248" duration="2027000" />
       <workItem from="1510778919369" duration="2768000" />
       <workItem from="1511997645609" duration="622000" />
-      <workItem from="1512418720928" duration="1057000" />
+      <workItem from="1512418720928" duration="1351000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="528022000" />
+    <option name="totallyTimeSpent" value="528316000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1218,27 +1205,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/user-hub/pdf-viewer/pdf-viewer.component.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.routing.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3120">
-          <caret line="93" column="37" lean-forward="false" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="920">
-          <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/serverTools/secrets/github_secret.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1264,20 +1230,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/user-hub/pdf-viewer/pdf-viewer.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="760">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/user-hub/pdf-viewer/pdf-viewer.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1417,16 +1369,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2000">
-          <caret line="87" column="19" lean-forward="false" selection-start-line="87" selection-start-column="19" selection-end-line="87" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#18#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/create.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="920">
@@ -1504,6 +1446,60 @@
         <state relative-caret-position="1191">
           <caret line="109" column="15" lean-forward="false" selection-start-line="109" selection-start-column="15" selection-end-line="109" selection-end-column="15" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/user-hub/pdf-viewer/pdf-viewer.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/user-hub/pdf-viewer/pdf-viewer.component.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/user-hub/pdf-viewer/pdf-viewer.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.routing.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1926">
+          <caret line="89" column="8" lean-forward="false" selection-start-line="89" selection-start-column="8" selection-end-line="89" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="41" column="17" lean-forward="false" selection-start-line="41" selection-start-column="17" selection-end-line="41" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1760">
+          <caret line="44" column="38" lean-forward="false" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+          <folding>
+            <marker date="1512420310536" expanded="true" signature="0:2043" ph="{&quot;name&quot;: &quot;test-file&quot;...}" />
+            <marker date="1512420310536" expanded="true" signature="275:1126" ph="{&quot;@angular/animations&quot;: &quot;^4.3.0&quot;...}" />
+            <marker date="1512420310536" expanded="true" signature="1149:2041" ph="{&quot;@angular/cli&quot;: &quot;1.2.1&quot;...}" />
+          </folding>
         </state>
       </provider>
     </entry>

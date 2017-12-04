@@ -90,11 +90,6 @@ const APP_ROUTES: Routes = [
       },
       {
         canActivate: [UserHubAuthGuard],
-        path: 'pdf',
-        component: PDFViewerComponent
-      },
-      {
-        canActivate: [UserHubAuthGuard],
         path: 'join',
         children: [
           {
