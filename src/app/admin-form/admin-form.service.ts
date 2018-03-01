@@ -4,9 +4,15 @@ import {Http, Headers, Response} from '@angular/http';
 import {Injectable} from '@angular/core';
 import 'rxjs/Rx';
 import {Observable} from 'rxjs/Observable';
+import { LETTER } from '../consts'
+import {BehaviorSubject} from "rxjs/BehaviorSubject";
 
 @Injectable()
 export class AdminFormService {
+
+  public letter = new BehaviorSubject<any>(LETTER);
+  letter$ = this.letter.asObservable();
+
   user: User;
   constructor(private http: Http) {}
   getProjects(){

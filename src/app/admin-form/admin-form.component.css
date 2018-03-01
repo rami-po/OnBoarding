@@ -14,7 +14,7 @@
 }
 
 .text-right {
-  margin-top: 20px;
+  margin-top: 70px;
 }
 
 .submit-button {
@@ -34,23 +34,23 @@
   flex-direction: column;
 }
 
-md-radio-group {
+mat-radio-group {
   display: inline-flex;
   flex-direction: column;
 }
 
-md-checkbox {
+mat-checkbox {
   margin-right: 10px;
 }
-md-radio-button {
+mat-radio-button {
   margin-bottom: 4px;
 }
 
-md-radio-group {
+mat-radio-group {
   margin-right: 10px;
 }
 
-md-select {
+mat-select {
   width: 50%;
   float: right;
 }

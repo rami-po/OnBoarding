@@ -2,12 +2,12 @@ import {AfterViewChecked, AfterViewInit, Component, ElementRef, NgZone, OnInit} 
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AdminLogInService} from "./admin-log-in.service";
 import {StatusMessageDialogComponent} from "../status-message/status-message.component";
-import {MdDialog} from "@angular/material";
+import {MatDialog} from "@angular/material";
 import {NavigationExtras, Router} from "@angular/router";
 import {AdminFormAuthGuard} from "../admin-form/admin-form.auth.guard";
 import {AppService} from "../app.service";
 import {isNullOrUndefined} from "util";
-import {AuthService, AppGlobals} from 'angular2-google-login';
+// import {AuthService, AppGlobals} from 'angular2-google-login';
 
 declare const gapi: any;
 
@@ -15,7 +15,7 @@ declare const gapi: any;
   selector: 'app-admin-log-in',
   templateUrl: './admin-log-in.component.html',
   styleUrls: ['./admin-log-in.component.scss'],
-  providers: [AdminLogInService, StatusMessageDialogComponent, AuthService]
+  providers: [AdminLogInService, StatusMessageDialogComponent]
 })
 export class AdminLogInComponent implements OnInit, AfterViewInit {
   myForm: FormGroup;
@@ -26,7 +26,7 @@ export class AdminLogInComponent implements OnInit, AfterViewInit {
   loggedIn: false;
 
   constructor(private logInService: AdminLogInService,
-              private dialog: MdDialog,
+              private dialog: MatDialog,
               private router: Router,
               private appService: AppService) {
   }

@@ -4,7 +4,7 @@ import {EmergencyFormService} from "./emergency-form.service";
 import {EmergencyForm} from "./emergency-form-model";
 import {NavigationExtras, Router} from "@angular/router";
 import {StatusMessageDialogComponent} from "../../status-message/status-message.component";
-import {MdDialog} from "@angular/material";
+import {MatDialog} from "@angular/material";
 
 @Component({
   selector: 'app-emergency-form',
@@ -18,7 +18,7 @@ export class EmergencyFormComponent implements OnInit {
 
   constructor(
     private emergencyFormService: EmergencyFormService,
-    private dialog: MdDialog,
+    private dialog: MatDialog,
     private router: Router
   ) { }
 

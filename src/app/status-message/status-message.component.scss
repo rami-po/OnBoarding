@@ -23,19 +23,19 @@
     }
   }
 
-  md-dialog-actions{
+  mat-dialog-actions{
 
     button{
       height: 30px;
       line-height: 30px;
     }
 
-    button[md-raised-button]{
+    button[mat-raised-button]{
       float: right;
     }
   }
 
-  md-dialog-content{
+  mat-dialog-content{
     width: 30rem;
     overflow: visible;
     margin: 3rem auto;

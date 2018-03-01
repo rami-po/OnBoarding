@@ -1,84 +1,84 @@
 <div align="center">
 
-  <md-card class="form-card">
+  <mat-card class="form-card">
     <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
 
       <h3 class="form-title">Personal Information</h3>
 
       <div class="form-container">
 
-        <md-input-container class="form-half-full-width">
+        <mat-input-container class="form-half-full-width">
           <input autocomplete="false" type="text" formControlName="lastName"
-                 mdInput placeholder="Last Name*" [ngModel]="user.last_name">
-        </md-input-container>
-        <md-input-container class="form-quarter-full-width">
+                 matInput placeholder="Last Name*" [ngModel]="user.last_name">
+        </mat-input-container>
+        <mat-input-container class="form-quarter-full-width">
           <input autocomplete="false" type="text" formControlName="firstName"
-                 mdInput placeholder="First Name*" [ngModel]="user.first_name">
-        </md-input-container>
-        <md-input-container class="form-quarter-full-width">
+                 matInput placeholder="First Name*" [ngModel]="user.first_name">
+        </mat-input-container>
+        <mat-input-container class="form-quarter-full-width">
           <input autocomplete="false" type="text" formControlName="middleInitial"
-                 mdInput placeholder="M.I">
-        </md-input-container>
+                 matInput placeholder="M.I">
+        </mat-input-container>
 
 
-        <md-input-container class="form-three-fourths-full-width">
+        <mat-input-container class="form-three-fourths-full-width">
           <input autocomplete="false" type="text" formControlName="streetAddress"
-                 mdInput placeholder="Street Address*">
-        </md-input-container>
-        <md-input-container class="form-quarter-full-width">
+                 matInput placeholder="Street Address*">
+        </mat-input-container>
+        <mat-input-container class="form-quarter-full-width">
           <input autocomplete="false" type="text" formControlName="apartmentUnit"
-                 mdInput placeholder="Apartment/Unit #">
-        </md-input-container>
+                 matInput placeholder="Apartment/Unit #">
+        </mat-input-container>
 
-        <md-input-container class="form-half-full-width">
+        <mat-input-container class="form-half-full-width">
           <input autocomplete="false" type="text" formControlName="city"
-                 mdInput placeholder="City*">
-        </md-input-container>
-        <md-input-container class="form-quarter-full-width">
+                 matInput placeholder="City*">
+        </mat-input-container>
+        <mat-input-container class="form-quarter-full-width">
           <input autocomplete="false" type="text" formControlName="state"
-                 mdInput placeholder="State*">
-        </md-input-container>
-        <md-input-container class="form-quarter-full-width">
+                 matInput placeholder="State*">
+        </mat-input-container>
+        <mat-input-container class="form-quarter-full-width">
           <input autocomplete="false" type="text" formControlName="zipCode"
-                 mdInput placeholder="ZIP Code*">
-        </md-input-container>
+                 matInput placeholder="ZIP Code*">
+        </mat-input-container>
 
 
-        <md-input-container class="form-half-full-width">
+        <mat-input-container class="form-half-full-width">
           <input autocomplete="false" type="text" formControlName="homePhone"
-                 mdInput placeholder="Home Phone*">
-        </md-input-container>
-        <md-input-container class="form-half-full-width">
+                 matInput placeholder="Home Phone*">
+        </mat-input-container>
+        <mat-input-container class="form-half-full-width">
           <input autocomplete="false" type="text" formControlName="altPhone"
-                 mdInput placeholder="Alternate Phone">
-        </md-input-container>
+                 matInput placeholder="Alternate Phone">
+        </mat-input-container>
 
-          <md-input-container class="form-full-width">
+          <mat-input-container class="form-full-width">
             <input autocomplete="false" type="text" formControlName="birthday"
-                   mdInput placeholder="Birth date (MM/DD/YY)*">
-          </md-input-container>
+                   matInput placeholder="Birth date (MM/DD/YY)*">
+          </mat-input-container>
 
-        <md-input-container class="form-full-width">
+        <mat-input-container class="form-full-width">
           <input autocomplete="false" type="text" formControlName="spouseName"
-                 mdInput placeholder="Spouse's Name">
-        </md-input-container>
-        <md-input-container class="form-half-full-width">
+                 matInput placeholder="Spouse's Name">
+        </mat-input-container>
+        <mat-input-container class="form-half-full-width">
           <input autocomplete="false" type="text" formControlName="spouseEmployer"
-                 mdInput placeholder="Spouse's Employer">
-        </md-input-container>
-        <md-input-container class="form-half-full-width">
+                 matInput placeholder="Spouse's Employer">
+        </mat-input-container>
+        <mat-input-container class="form-half-full-width">
           <input autocomplete="false" type="text" formControlName="spouseWorkPhone"
-                 mdInput placeholder="Spouse's Work Phone">
-        </md-input-container>
+                 matInput placeholder="Spouse's Work Phone">
+        </mat-input-container>
 
-        <md-select placeholder="Computer Preference*" formControlName="computer" name="computer">
-          <md-option *ngFor="let computer of computers" [value]="computer">
+        <mat-select placeholder="Computer Preference*" formControlName="computer" name="computer">
+          <mat-option *ngFor="let computer of computers" [value]="computer">
             {{computer}}
-          </md-option>
-        </md-select>
+          </mat-option>
+        </mat-select>
 
         <div class ="text-right">
-          <button md-raised-button
+          <button mat-raised-button
                   color="primary"
                   class="submit-button"
                   type="submit"
@@ -89,6 +89,6 @@
 
     </form>
 
-  </md-card>
+  </mat-card>
 
 </div>

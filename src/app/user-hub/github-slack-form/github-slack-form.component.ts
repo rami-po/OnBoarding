@@ -5,7 +5,7 @@ import {User} from '../../admin-form/user.model';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {GithubSlackFormService} from "./github-slack-form.service";
 import {StatusMessageDialogComponent} from "../../status-message/status-message.component";
-import {MdDialog} from "@angular/material";
+import {MatDialog} from "@angular/material";
 
 @Component({
   selector: 'app-github-slack-form',
@@ -24,7 +24,7 @@ export class GithubSlackFormComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private githubSlackFormService: GithubSlackFormService,
-    private dialog: MdDialog) { }
+    private dialog: MatDialog) { }
 
     onSubmitGithub(){
       if (this.githubForm.valid){

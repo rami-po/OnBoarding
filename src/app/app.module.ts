@@ -5,8 +5,8 @@ import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-  MdButtonModule, MdCardModule, MdCheckboxModule, MdDatepickerModule, MdDialogModule, MdInputModule, MdNativeDateModule,
-  MdProgressBarModule, MdProgressSpinnerModule, MdRadioModule, MdSelectModule
+  MatButtonModule, MatCardModule, MatCheckboxModule, MatDatepickerModule, MatDialogModule, MatInputModule, MatNativeDateModule,
+  MatProgressBarModule, MatProgressSpinnerModule, MatRadioModule, MatSelectModule
 } from '@angular/material';
 
 import {AppComponent} from './app.component';
@@ -33,7 +33,11 @@ import { AdminEmployeesSideListComponent } from './admin-employees/admin-employe
 import {AppService} from "./app.service";
 import { AdminEmployeesPersonalViewComponent } from './admin-employees/admin-employees-personal-view/admin-employees-personal-view.component';
 import { AdminEmployeesEmergencyViewComponent } from './admin-employees/admin-employees-emergency-view/admin-employees-emergency-view.component';
-import { AuthService, AppGlobals } from 'angular2-google-login';
+// import { AuthService, AppGlobals } from 'angular2-google-login';
+import {TimelineModule} from "./+timeline/timeline.module";
+import {HttpClientModule} from "@angular/common/http";
+import { WelcomeLetterComponent } from './admin-form/welcome-letter/welcome-letter.component';
+import {NgxEditorModule} from "ngx-editor";
 
 
 @NgModule({
@@ -54,28 +58,32 @@ import { AuthService, AppGlobals } from 'angular2-google-login';
     AdminEmployeesComponent,
     AdminEmployeesSideListComponent,
     AdminEmployeesPersonalViewComponent,
-    AdminEmployeesEmergencyViewComponent
+    AdminEmployeesEmergencyViewComponent,
+    WelcomeLetterComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    MdButtonModule,
-    MdInputModule,
-    MdCardModule,
-    MdDialogModule,
-    MdCheckboxModule,
-    MdProgressBarModule,
-    MdSelectModule,
-    MdRadioModule,
-    MdProgressSpinnerModule,
-    MdDatepickerModule,
-    MdNativeDateModule,
+    MatButtonModule,
+    MatInputModule,
+    MatCardModule,
+    MatDialogModule,
+    MatCheckboxModule,
+    MatProgressBarModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatProgressSpinnerModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NgxEditorModule,
     routing,
     ReactiveFormsModule,
-    HttpModule
+    HttpModule,
+    HttpClientModule,
+    TimelineModule
   ],
-  providers: [AdminFormAuthGuard, UserHubAuthGuard, UserHubService, AppService, AuthService],
+  providers: [AdminFormAuthGuard, UserHubAuthGuard, UserHubService, AppService],
   entryComponents: [
     StatusMessageDialogComponent
   ],

@@ -4,7 +4,7 @@ import {PersonalForm} from "./personal-form-model";
 import {PersonalFormService} from "./personal-form-service";
 import {ActivatedRoute, NavigationExtras, Router} from "@angular/router";
 import {UserHubService} from "../user-hub.service";
-import {MdDialog} from "@angular/material";
+import {MatDialog} from "@angular/material";
 import {StatusMessageDialogComponent} from "../../status-message/status-message.component";
 
 @Component({
@@ -21,7 +21,7 @@ export class PersonalFormComponent implements OnInit {
   constructor(
     private personalFormService: PersonalFormService,
     private router: Router,
-    private dialog: MdDialog
+    private dialog: MatDialog
   ) { }
 
   onSubmit(){

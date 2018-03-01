@@ -1,0 +1,36 @@
+<h3 mat-dialog-title>Timeline Event</h3>
+<form [formGroup]="timelineForm" (ngSubmit)="submitTimelineForm()">
+  <div class="form-group">
+    <label for="date" class="label">Date</label>
+    <mat-input-container floatPlaceholder="never" class="input">
+      <input readonly="readonly" formControlName="date" matInput [matDatepicker]="picker" placeholder="mm/dd/yyyy" (click)="picker.open()">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    </mat-input-container>
+    <mat-datepicker #picker></mat-datepicker>
+  </div>
+  <div class="form-group">
+    <label for="event" class="label">Description</label>
+    <app-ngx-editor [config]="editorConfig" formControlName="event" [(ngModel)]="welcomeLetter"></app-ngx-editor>
+  </div>
+  <!-- NOTE: Type select should be hidden until the timeline types are decided upon -CF -->
+  <!--
+  <div class="form-group">
+    <label for="type" class="label">Type</label>
+    <mat-select placeholder="Type" formControlName="type" name="item" floatPlaceholder="never" class="mat-form-field">
+      <mat-option *ngFor="let item of items" [value]="item">
+        {{item}}
+      </mat-option>
+    </mat-select>
+  </div>
+  -->
+  <!-- Only show budget field for projects -->
+  <div class="form-group" *ngIf="timelineType === 'project'">
+    <label for="budget" class="label">Budgeted Hours (optional)</label>
+    <div class="input-wrap input-wrap--dollars">
+      <input type="text" formControlName="budget" name="budget" class="input" thousandsInput>
+    </div>
+  </div>
+  <button mat-button class="btn btn--default">
+    {{ action === "edit" ? "Save" : "Add" }}
+  </button>
+</form>

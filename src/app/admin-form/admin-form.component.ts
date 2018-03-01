@@ -3,9 +3,10 @@ import {User} from './user.model';
 import {AdminFormService} from './admin-form.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {StatusMessageDialogComponent} from "../status-message/status-message.component";
-import {MdDialog} from "@angular/material";
+import {MatDialog} from "@angular/material";
 import {NavigationExtras, Router} from "@angular/router";
 import {Project} from "./project.model";
+import {TimelineEventComponent} from "../+timeline/timeline-event";
 
 @Component({
   selector: 'app-admin-form',
@@ -42,7 +43,7 @@ export class AdminFormComponent implements OnInit {
 
   constructor(
     private formService: AdminFormService,
-    private dialog: MdDialog,
+    private dialog: MatDialog,
     private router: Router
   ) {}
 
@@ -62,6 +63,11 @@ export class AdminFormComponent implements OnInit {
   updateSlack() {
     this.hasSlack = !this.hasSlack;
     console.log('slack: ' + this.hasSlack);
+  }
+
+  editWelcomeLetter() {
+    const dialog = this.dialog.open(TimelineEventComponent);
+    dialog.componentInstance.action = 'add';
   }
 
   onSubmit() {

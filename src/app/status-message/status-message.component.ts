@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdDialogRef } from '@angular/material';
+import { MatDialogRef } from '@angular/material';
 
 @Component({
   selector: 'app-status-message',
@@ -15,7 +15,7 @@ export class StatusMessageDialogComponent implements OnInit {
   public warning: boolean = false;
 
   constructor(
-    private dialogRef: MdDialogRef<StatusMessageDialogComponent>,
+    private dialogRef: MatDialogRef<StatusMessageDialogComponent>,
   ) { }
 
   ngOnInit() { }

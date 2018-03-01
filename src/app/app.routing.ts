@@ -13,6 +13,7 @@ import {MedicalFormComponent} from "./user-hub/medical-form/medical-form.compone
 import {DentalFormComponent} from "./user-hub/dental-form/dental-form.component";
 import {AdminConsoleComponent} from "./admin-console/admin-console.component";
 import {AdminEmployeesComponent} from "./admin-employees/admin-employees.component";
+import {WelcomeLetterComponent} from "./admin-form/welcome-letter/welcome-letter.component";
 /**
  * Created by Rami Khadder on 7/17/2017.
  */
@@ -52,6 +53,11 @@ const APP_ROUTES: Routes = [
         canActivate: [AdminFormAuthGuard],
         path: 'employees',
         component: AdminEmployeesComponent
+      },
+      {
+        canActivate: [AdminFormAuthGuard],
+        path: 'letter',
+        component: WelcomeLetterComponent
       }
     ]
   },
