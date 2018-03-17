@@ -12,7 +12,7 @@ import {TimelineEventComponent} from "../+timeline/timeline-event";
   selector: 'app-admin-form',
   templateUrl: './admin-form.component.html',
   styleUrls: ['./admin-form.component.css'],
-  providers: [AdminFormService, StatusMessageDialogComponent]
+  providers: [StatusMessageDialogComponent]
 })
 /*
 export class AdminFormComponent {
@@ -37,20 +37,21 @@ export class AdminFormComponent implements OnInit {
   projects: Project[];
 
   myQueryParams = [
-    { id: 'hasGithub', param: this.hasGithub},
-    { id: 'hasSlack', param: this.hasSlack}
+    {id: 'hasGithub', param: this.hasGithub},
+    {id: 'hasSlack', param: this.hasSlack}
   ];
 
-  constructor(
-    private formService: AdminFormService,
-    private dialog: MatDialog,
-    private router: Router
-  ) {}
+  constructor(private formService: AdminFormService,
+              private dialog: MatDialog,
+              private router: Router) {
+  }
 
-  back(){
+  back() {
+    sessionStorage.setItem('form', JSON.stringify(this.myForm.value));
     this.router.navigate(['/admin', 'console']);
     //this.router.navigate(['/create', 'options'], navigationExtras);
   }
+
   updateHarvest() {
     this.hasHarvest = !this.hasHarvest;
   }
@@ -78,6 +79,8 @@ export class AdminFormComponent implements OnInit {
       console.log("SUBMITTING??");
       this.mode = 'indeterminate';
       console.log(this.myForm);
+      const isLetterValid = this.formService.isLetterValid.getValue();
+      console.log(isLetterValid);
       const user = new User(
         this.myForm.value.firstName,
         this.myForm.value.lastName,
@@ -88,11 +91,14 @@ export class AdminFormComponent implements OnInit {
         this.hasSlack,
         this.myForm.value.group,
         this.myForm.value.project,
-        this.myForm.value.startDate.toDateString());
+        this.myForm.value.startDate.toDateString(),
+        isLetterValid,
+        isLetterValid ? this.formService.letter.getValue() : null);
 
       this.formService.addUser(user)
         .subscribe(
           function (response) {
+            sessionStorage.removeItem('form');
             this.mode = 'determinate';
             this.openDialog(true, response.title, response.message);
           }.bind(this),
@@ -104,9 +110,9 @@ export class AdminFormComponent implements OnInit {
     }
   }
 
-  openDialog(isSuccessful, title, message){
+  openDialog(isSuccessful, title, message) {
     const dialog = this.dialog.open(StatusMessageDialogComponent);
-    if (isSuccessful){
+    if (isSuccessful) {
       dialog.componentInstance.title = 'Success!';
       dialog.componentInstance.success = true;
     } else {
@@ -117,15 +123,30 @@ export class AdminFormComponent implements OnInit {
   }
 
   ngOnInit() {
+    let form = JSON.parse(sessionStorage.getItem('form'));
+
+    if (form == null) {
+      form = {
+        firstName: null,
+        lastName: null,
+        personalEmail: null,
+        productOpsEmail: null,
+        group: 'Employee',
+        project: null,
+        startDate: null
+      };
+    }
+
     this.myForm = new FormGroup({
-      firstName: new FormControl(null, Validators.required),
-      lastName: new FormControl(null, Validators.required),
-      personalEmail: new FormControl(null, Validators.required),
-      productOpsEmail: new FormControl(null, Validators.required),
-      group: new FormControl('Employee', null),
-      project: new FormControl(null, null),
-      startDate: new FormControl(null, Validators.required)
+      firstName: new FormControl(form.firstName, Validators.required),
+      lastName: new FormControl(form.lastName, Validators.required),
+      personalEmail: new FormControl(form.personalEmail, Validators.required),
+      productOpsEmail: new FormControl(form.productOpsEmail, Validators.required),
+      group: new FormControl(form.group, null),
+      project: new FormControl(form.project, null),
+      startDate: new FormControl(form.startDate != null ? new Date(form.startDate) : null, Validators.required)
     });
+
 
     this.formService.getProjects()
       .subscribe(
@@ -139,6 +160,10 @@ export class AdminFormComponent implements OnInit {
           });
         }
       );
+  }
+
+  saveForm() {
+    sessionStorage.setItem('form', JSON.stringify(this.myForm.value));
   }
 
 }

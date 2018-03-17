@@ -13,10 +13,16 @@ export class AdminFormService {
   public letter = new BehaviorSubject<any>(LETTER);
   letter$ = this.letter.asObservable();
 
+  public isLetterValid = new BehaviorSubject<any>(true);
+  isLetterValid$ = this.isLetterValid.asObservable();
+
+  private apiCreateBase = document.location.protocol + '//' + window.location.hostname + '/server/create';
+
   user: User;
   constructor(private http: Http) {}
   getProjects(){
-    return this.http.get('http://onboarding.productops.com/server/create/home')
+    console.log(this.apiCreateBase + '/home');
+    return this.http.get(this.apiCreateBase + '/home')
       .map((response: Response) => {
         const projects = response.json().obj;
         let activeProjects: Project[] = [];
@@ -34,7 +40,7 @@ export class AdminFormService {
     this.user = user;
     const body = JSON.stringify(user);
     const headers = new Headers({'Content-Type': 'application/json'});
-    return this.http.post('http://onboarding.productops.com/server/create/home', body, {headers: headers})
+    return this.http.post(this.apiCreateBase + '/home', body, {headers: headers})
       .map((response: Response) => response.json())
       .catch((error: Response) => Observable.throw(error.json()));
   }

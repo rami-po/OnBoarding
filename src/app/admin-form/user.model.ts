@@ -13,12 +13,14 @@ export class User {
   group: string;
   project: Project;
   startDate: string;
+  isLetterValid: boolean;
+  letter: string;
 
   constructor(firstName: string, lastName: string,
               primaryEmail: string, productOpsEmail: string,
               hasHarvest: boolean, hasGithub: boolean,
               hasSlack: boolean, group: string, project: Project,
-              startDate: string) {
+              startDate: string, isLetterValid: boolean, letter: string) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.personalEmail = primaryEmail;
@@ -29,5 +31,7 @@ export class User {
     this.group = group;
     this.project = project;
     this.startDate = startDate;
+    this.isLetterValid = isLetterValid;
+    this.letter = letter;
   }
 }

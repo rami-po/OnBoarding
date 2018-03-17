@@ -97,9 +97,9 @@ router.post('/home', function (req, res, next) {
 
 router.post('/options', function (req, res, next) {
   console.log(req.body);
-  github.invite(req.body.username, function(statusCode, result) {
+  github.invite(req.body.username, function (statusCode, result) {
     console.log("onResult: (" + statusCode + ")" + JSON.stringify(result));
-    if (statusCode === 200){
+    if (statusCode === 200) {
       returnResponse(res, statusCode, 'Welcome to github!', 'A confirmation email has been to your email.', false);
     } else {
       returnResponse(res, statusCode, 'An error occurred', result.message + '. Make sure you entered your username correctly.', false)
@@ -107,22 +107,27 @@ router.post('/options', function (req, res, next) {
   });
 });
 
-function sendConfirmationEmail(auth, userData, harvestUserData){
-  googleTools.sendConfirmationEmail(auth, userData, harvestUserData, function (err, response) {
-    if (err) {
-      returnResponse(createRes, err.code, '', err + '', true, userData, auth);
-    } else{
-      console.log("Sent confirmation email!");
-      returnResponse(createRes, 200,
-        userData.firstName + ' ' + userData.lastName + ' has joined productOps!',
-        'A confirmation email was sent to ' + userData.personalEmail);
-    }
-  });
+function sendConfirmationEmail(auth, userData, harvestUserData) {
+  if (userData.isLetterValid) {
+    googleTools.sendConfirmationEmail(auth, userData, harvestUserData, function (err, response) {
+      if (err) {
+        returnResponse(createRes, err.code, '', err + '', true, userData, auth);
+      } else {
+        console.log("Sent confirmation email!");
+        returnResponse(createRes, 200,
+          userData.firstName + ' ' + userData.lastName + ' has joined productOps!',
+          'A confirmation email was sent to ' + userData.personalEmail);
+      }
+    });
+  } else {
+    returnResponse(createRes, 200,
+      userData.firstName + ' ' + userData.lastName + ' has joined productOps!');
+  }
 }
 
-function assignUserToProject(userID, projectID, userData, auth, onPostExecute){
-  harvest.assignUserToProject(userID, projectID, function(statusCode, result){
-    if (statusCode !== 201){
+function assignUserToProject(userID, projectID, userData, auth, onPostExecute) {
+  harvest.assignUserToProject(userID, projectID, function (statusCode, result) {
+    if (statusCode !== 201) {
       console.log("FAILED ASSIGNING");
       returnResponse(createRes, statusCode, 'Message from Harvest: ', result.error + '', true, userData, auth);
     }
@@ -133,8 +138,8 @@ function assignUserToProject(userID, projectID, userData, auth, onPostExecute){
   });
 }
 
-function returnResponse(response, status, title, message, shouldDeleteUser, userData, auth){
-  if (shouldDeleteUser){
+function returnResponse(response, status, title, message, shouldDeleteUser, userData, auth) {
+  if (shouldDeleteUser) {
     console.log("DELETING USER!!!!!!!!");
     googleTools.deleteUser(auth, userData, function (err, googleResponse) {
       if (err) {

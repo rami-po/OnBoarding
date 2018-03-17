@@ -38,6 +38,7 @@ import {TimelineModule} from "./+timeline/timeline.module";
 import {HttpClientModule} from "@angular/common/http";
 import { WelcomeLetterComponent } from './admin-form/welcome-letter/welcome-letter.component';
 import {NgxEditorModule} from "ngx-editor";
+import {AdminFormService} from "./admin-form/admin-form.service";
 
 
 @NgModule({
@@ -83,7 +84,7 @@ import {NgxEditorModule} from "ngx-editor";
     HttpClientModule,
     TimelineModule
   ],
-  providers: [AdminFormAuthGuard, UserHubAuthGuard, UserHubService, AppService],
+  providers: [AdminFormAuthGuard, UserHubAuthGuard, UserHubService, AppService, AdminFormService],
   entryComponents: [
     StatusMessageDialogComponent
   ],

@@ -1,8 +1,9 @@
 <div class="center">
   <app-ngx-editor [config]="editorConfig" [(ngModel)]="welcomeLetter"></app-ngx-editor>
   <div class="button_group">
-    <button>Back</button>
-    <button>Reset</button>
-    <button>Save</button>
+    <button [routerLink]="'/admin/create'">Back</button>
+    <button (click)="reset()">Reset</button>
+    <button [routerLink]="'/admin/create'" (click)="save()">Save</button>
   </div>
+  <mat-checkbox [(ngModel)]="!isLetterValid" (change)="updateWelcomeLetter()">Do Not Send Welcome Letter</mat-checkbox>
 </div>

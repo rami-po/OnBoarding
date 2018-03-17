@@ -6,13 +6,15 @@ export const LETTER = 'Hello <mark>FIRST_NAME</mark> <mark>LAST_NAME</mark>,' +
   '<br /><br />' +
   '<b>Before your first day, please complete the following:</b>' +
   '<br /><br /><ol><li>' +
-  'Please login to your new productOps email account by signing in <a href="' + URL + '">here</a> with the following account details:' +
+  'Please login to your new productOps email account by signing in <a href="GOOGLEURL">here</a> with the following account details:' +
   '<br /><br />' +
   'Username<br /><mark>USERNAME</mark>' +
   '<br /><br />' +
   'Password<br />' +
   '<mark>prod0p$2017</mark><br /><br />' +
-  '<li>Please visit our OnBoarding page to review, fill out and print the following forms: <br /><ul style="list-style-type:circle">' +
+  '<li><mark>Create a Github account with productOps information (e.g., name-po) using your new email <a href="https://github.com/join">here</a>.</mark></li><br/>' +
+  '<li><mark>Join the productOps Slack team <a href="https://productops.slack.com/">here</a>.</mark></li><br/>' +
+  '<li>Please visit <a href="ONBOARDINGURL">our OnBoarding page</a> to review, fill out and print the following forms:<br /><ul style="list-style-type:circle">' +
   '<li>Personal Information Form (complete online)</li>' +
   '<li>Emergency Contact Form (complete online)</li>' +
   '<li>IRS W-4 Form (Employee Withholding Allowance)(complete online and print)</li>' +

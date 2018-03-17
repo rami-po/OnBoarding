@@ -20,10 +20,80 @@ function makeBody(to, from, subject, message) {
   return encodedMail;
 }
 
+function removeOnBoardingInfo(letter) {
+
+}
+
+exports.sendConfirmationEmail = function (auth, userData, harvestUserData, onPostExecute) {
+  if (harvestUserData != null) {
+    var token = jwt.sign({
+      harvestUserData: harvestUserData,
+      userData: userData
+    }, tokenSecret.secret, {expiresIn: 604800});
+    console.log(token);
+  }
+
+  const googleURL = "https://www.google.com/accounts/AccountChooser?Email=" + userData.productOpsEmail + "&continue=https://apps.google.com/user/hub";
+  const onBoardingURL = 'onboarding.productops.com/user?token=' + token;
+  const github = '<mark>Create a Github account with productOps information (e.g., name-po) ' +
+    'using your new email <a href="https://github.com/join">here</a>.</mark>';
+
+  const slack = '<mark>Join the productOps Slack team <a href="https://productops.slack.com/">here</a>.</mark>';
+
+  const onboarding = '<mark>Please visit <a href="ONBOARDINGURL">our OnBoarding page</a> to review, fill out and print the following forms:</mark>';
+
+  const githubNoMarkTags = 'Create a Github account with productOps information (e.g., name-po) ' +
+    'using your new email <a href="https://github.com/join">here</a>.';
+
+  const slackNoMarkTags = 'Join the productOps Slack team <a href="https://productops.slack.com/">here</a>.';
+
+  const onboardingNoMarkTags = 'Please visit <a href="ONBOARDINGURL">our OnBoarding page</a> to review, fill out and print the following forms:';
+
+  var welcomeLetter = userData.letter.replace('GOOGLEURL', googleURL)
+  .replace(onboarding, onboardingNoMarkTags )
+  //   .replace('ONBOARDINGURL', onBoardingURL)
+    .replace('<mark>FIRST_NAME</mark>', userData.firstName)
+    .replace('<mark>LAST_NAME</mark>', userData.lastName)
+    .replace('<mark>USERNAME</mark>', userData.productOpsEmail)
+    .replace('<mark>prod0p$2017</mark>', 'prod0ps2017')
+    .replace(/<mark>START_DATE<\/mark>/g, userData.startDate)
+    .replace(github, (userData.hasGithub ? githubNoMarkTags : ''))
+    .replace(slack, (userData.hasSlack ? slackNoMarkTags : ''));
+
+  if (harvestUserData == null) {
+    var regex = new RegExp(onboardingNoMarkTags + "(.*?)</ul>");
+    welcomeLetter = welcomeLetter.replace(regex, '')
+      .replace(onboardingNoMarkTags, '');
+  }
+
+  welcomeLetter = welcomeLetter.replace('ONBOARDINGURL', onBoardingURL);
+
+  var raw = makeBody(
+    userData.personalEmail,
+    'rami.khadder@productOps.com',
+    'Welcome to productOps!',
+    welcomeLetter);
+  var gmail = google.gmail('v1');
+
+  gmail.users.messages.send({
+    auth: auth,
+    userId: 'me',
+    resource: {
+      raw: raw
+    }
+  }, function (err, response) {
+    onPostExecute(err, response);
+  });
+
+};
+
 //Gmail API
-exports.sendConfirmationEmail = function(auth, userData, harvestUserData, onPostExecute) {
-  if (harvestUserData != null){
-    var token = jwt.sign({harvestUserData: harvestUserData, userData: userData}, tokenSecret.secret, {expiresIn: 604800});
+exports.sendConfirmationEmailOld = function (auth, userData, harvestUserData, onPostExecute) {
+  if (harvestUserData != null) {
+    var token = jwt.sign({
+      harvestUserData: harvestUserData,
+      userData: userData
+    }, tokenSecret.secret, {expiresIn: 604800});
     console.log(token);
   }
   var URL = "https://www.google.com/accounts/AccountChooser?Email=" + userData.productOpsEmail + "&continue=https://apps.google.com/user/hub";
@@ -52,7 +122,7 @@ exports.sendConfirmationEmail = function(auth, userData, harvestUserData, onPost
     message += '<li>Create a Github account with productOps information (e.g., name-po) using your new email at: ' + githubURL + '</li><br/>';
   }
   if (userData.hasSlack) {
-   message += '<li>Join the productOps Slack team <a href="https://productops.slack.com/">here</a>.</li><br/>'
+    message += '<li>Join the productOps Slack team <a href="https://productops.slack.com/">here</a>.</li><br/>'
   }
 
   if (harvestUserData != null) {
@@ -103,12 +173,12 @@ exports.sendConfirmationEmail = function(auth, userData, harvestUserData, onPost
     resource: {
       raw: raw
     }
-  }, function(err, response) {
+  }, function (err, response) {
     onPostExecute(err, response);
   });
 };
 
-exports.sendProjectManagerEmail = function(auth, userData, onPostExecute) {
+exports.sendProjectManagerEmail = function (auth, userData, onPostExecute) {
   SQL.getProjectManagers(userData.project.id, function (err, result) {
     if (err) {
       onPostExecute(err, result);
@@ -123,7 +193,7 @@ exports.sendProjectManagerEmail = function(auth, userData, onPostExecute) {
         to += ", " + result[i].email;
       }
 
-       var raw = makeBody(
+      var raw = makeBody(
         to,
         'rami.khadder@productOps.com',
         'You have a new project member!',
@@ -131,21 +201,21 @@ exports.sendProjectManagerEmail = function(auth, userData, onPostExecute) {
 
       var gmail = google.gmail('v1');
       gmail.users.messages.send({
-         auth: auth,
-         userId: 'me',
-         resource: {
+        auth: auth,
+        userId: 'me',
+        resource: {
           raw: raw
         }
-       }, function(err, response) {
+      }, function (err, response) {
         onPostExecute(err, response);
-       });
+      });
 
     }
   });
 };
 
 //G Suite Admin SDK
-exports.createUser = function(auth, userData, onPostExecute) {
+exports.createUser = function (auth, userData, onPostExecute) {
   var service = google.admin('directory_v1');
   service.users.insert({
     auth: auth,
@@ -159,22 +229,22 @@ exports.createUser = function(auth, userData, onPostExecute) {
       "changePasswordAtNextLogin": true,
       "emails": userData.personalEmail
     }
-  }, function(err, response) {
+  }, function (err, response) {
     onPostExecute(err, response);
   });
 };
 
-exports.deleteUser = function(auth, userData, onPostExecute) {
+exports.deleteUser = function (auth, userData, onPostExecute) {
   var service = google.admin('directory_v1');
   service.users.delete({
     auth: auth,
     userKey: userData.productOpsEmail
-  }, function(err, response) {
+  }, function (err, response) {
     onPostExecute(err, response);
   });
 };
 
-exports.addUserToGroup = function(auth, userData, onPostExecute) {
+exports.addUserToGroup = function (auth, userData, onPostExecute) {
   var service = google.admin('directory_v1');
   service.members.insert({
     auth: auth,
@@ -183,33 +253,33 @@ exports.addUserToGroup = function(auth, userData, onPostExecute) {
       "email": userData.productOpsEmail,
       "role": "MEMBER"
     }
-  }, function(err, response) {
+  }, function (err, response) {
     onPostExecute(err, response);
   })
 };
 
-exports.getFile = function(auth, fileId, onPostExecute){
+exports.getFile = function (auth, fileId, onPostExecute) {
   var service = google.drive('v3');
   service.files.get({
     auth: auth,
     fileId: fileId
-  }, function(err, response){
+  }, function (err, response) {
     onPostExecute(err, response);
   });
 };
 
-exports.exportFile = function(auth, fileId, onPostExecute){
+exports.exportFile = function (auth, fileId, onPostExecute) {
   var service = google.drive('v3');
   service.files.export({
     auth: auth,
     fileId: fileId,
     mimeType: 'application/pdf'
-  }, function(err, response){
+  }, function (err, response) {
     onPostExecute(err, response);
   });
 };
 
-exports.grantUserAccessToDrive = function(auth, fileId, userData, onPostExecute){
+exports.grantUserAccessToDrive = function (auth, fileId, userData, onPostExecute) {
   var service = google.drive('v3');
   service.permissions.create({
     auth: auth,
@@ -220,7 +290,7 @@ exports.grantUserAccessToDrive = function(auth, fileId, userData, onPostExecute)
       emailAddress: userData.productOpsEmail
 
     }
-  }, function(err, response){
+  }, function (err, response) {
     onPostExecute(err, response);
   });
 };
@@ -231,7 +301,7 @@ exports.getMemberFromGroup = function (auth, id, onPostExecute) {
     auth: auth,
     groupKey: 'onboarding-access@productops.com',
     memberKey: id
-  }, function(err, response){
+  }, function (err, response) {
     onPostExecute(err, response);
   });
 };
