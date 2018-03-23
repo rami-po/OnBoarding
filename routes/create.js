@@ -54,22 +54,24 @@ router.post('/home', function (req, res, next) {
                             returnResponse(createRes, statusCode, 'Message from Harvest: ', result.message + '', true, userData, auth);
                           }
                           else {
-                            assignUserToProject(userData.productOpsEmail, 194910/*internal*/, userData, auth, function(){
-                              if (userData.project != null){
-                                assignUserToProject(userData.productOpsEmail, userData.project.id, userData, auth, function(){
-                                  googleTools.sendProjectManagerEmail(auth, userData, function (err, response) {
-                                    if (err) {
-                                      returnResponse(createRes, 500, '', err + '', true, userData, auth);
-                                    } else {
-                                      sendConfirmationEmail(auth, userData, result);
-                                    }
-                                  });
-                                })
-                              }
-                              else {
-                                sendConfirmationEmail(auth, userData, result);
-                              }
-                            })
+                            if (userData.projects.length > 0) {
+                              userData.projects.forEach(function(project, i) {
+                                assignUserToProject(userData.productOpsEmail, project.id, userData, auth, function(){
+                                  if (i == userData.projects.length - 1) {
+                                    sendConfirmationEmail(auth, userData, result);
+                                    // googleTools.sendProjectManagerEmail(auth, userData, function (err, response) {
+                                    //   if (err) {
+                                    //     returnResponse(createRes, 500, '', err + '', true, userData, auth);
+                                    //   } else {
+                                    //     sendConfirmationEmail(auth, userData, result);
+                                    //   }
+                                    // });
+                                  }
+                                });
+                              });
+                            } else {
+                              sendConfirmationEmail(auth, userData, null);
+                            }
                           }
                         });
                       }

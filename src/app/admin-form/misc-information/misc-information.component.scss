@@ -1,0 +1,23 @@
+/deep/.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-bottom: 30px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-bottom: 30px;
+}
+
+.letter-checkbox {
+  margin-bottom: 30px;
+}

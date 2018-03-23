@@ -39,12 +39,16 @@ import {HttpClientModule} from "@angular/common/http";
 import { WelcomeLetterComponent } from './admin-form/welcome-letter/welcome-letter.component';
 import {NgxEditorModule} from "ngx-editor";
 import {AdminFormService} from "./admin-form/admin-form.service";
+import { UserInformationComponent } from './admin-form/user-information/user-information.component';
+import { HarvestInformationComponent } from './admin-form/harvest-information/harvest-information.component';
+import { MiscInformationComponent } from './admin-form/misc-information/misc-information.component';
+import { ReviewInformationComponent } from './admin-form/review-information/review-information.component';
+import {AdminFormModule} from "./admin-form/admin-form.module";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminFormComponent,
     StatusMessageDialogComponent,
     GithubSlackFormComponent,
     EmergencyFormComponent,
@@ -60,7 +64,6 @@ import {AdminFormService} from "./admin-form/admin-form.service";
     AdminEmployeesSideListComponent,
     AdminEmployeesPersonalViewComponent,
     AdminEmployeesEmergencyViewComponent,
-    WelcomeLetterComponent
   ],
   imports: [
     BrowserModule,
@@ -82,9 +85,10 @@ import {AdminFormService} from "./admin-form/admin-form.service";
     ReactiveFormsModule,
     HttpModule,
     HttpClientModule,
-    TimelineModule
+    TimelineModule,
+    AdminFormModule
   ],
-  providers: [AdminFormAuthGuard, UserHubAuthGuard, UserHubService, AppService, AdminFormService],
+  providers: [AdminFormAuthGuard, UserHubAuthGuard, UserHubService, AppService],
   entryComponents: [
     StatusMessageDialogComponent
   ],

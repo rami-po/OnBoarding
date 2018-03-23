@@ -1,9 +1,9 @@
 <div class="center">
+  <h3 class="form-title">Edit Welcome Letter</h3>
   <app-ngx-editor [config]="editorConfig" [(ngModel)]="welcomeLetter"></app-ngx-editor>
   <div class="button_group">
-    <button [routerLink]="'/admin/create'">Back</button>
-    <button (click)="reset()">Reset</button>
-    <button [routerLink]="'/admin/create'" (click)="save()">Save</button>
+    <button mat-button (click)="back()">Back</button>
+    <button mat-raised-button color="accent" (click)="reset()">Reset</button>
+    <button mat-raised-button color="primary" (click)="next(); save()">Next</button>
   </div>
-  <mat-checkbox [(ngModel)]="!isLetterValid" (change)="updateWelcomeLetter()">Do Not Send Welcome Letter</mat-checkbox>
 </div>

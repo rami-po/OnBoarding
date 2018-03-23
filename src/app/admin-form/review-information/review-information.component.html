@@ -1,0 +1,62 @@
+<div class="review-group">
+  <h3 class="form-title">Review</h3>
+
+  <span *ngIf="user.isLetterValid; else no_letter">
+    <b>A welcome letter will be sent to {{user.personalEmail}}.</b>
+  </span>
+  <ng-template #no_letter>
+    <b>No welcome letter will be sent.</b>
+  </ng-template>
+
+  <br>
+
+  <span><b>First Name:</b> {{user.firstName}}</span>
+  <span><b>Last Name:</b> {{user.lastName}}</span>
+  <span><b>Personal Email:</b> {{user.personalEmail}}</span>
+  <span><b>ProductOps Email:</b> {{user.productOpsEmail}}</span>
+  <span><b>Google Group:</b> {{user.group}}</span>
+
+  <span><b>Start Date:</b> {{user.startDate | date: 'MM/dd/yyyy'}}</span>
+
+  <br>
+
+  <span>
+    <b>Accounts that will be created:</b>
+    <ul>
+      <li>Google</li>
+      <li *ngIf="user.hasHarvest">Harvest</li>
+      <li *ngIf="user.hasHarvest">Github</li>
+      <li *ngIf="user.hasSlack">Slack</li>
+    </ul>
+  </span>
+
+  <br>
+
+  <span *ngIf="user.hasHarvest && projects.length > 0; else no_projects">
+    <b>Harvest Projects:</b>
+    <ul class="scrollable">
+      <li *ngFor="let project of projects">
+        {{project.name}}
+      </li>
+    </ul>
+  </span>
+  <ng-template #no_projects>
+    <b>{{user.firstName}} will not be assigned to any Harvest projects.</b>
+  </ng-template>
+
+</div>
+
+<div class="button-group">
+  <button mat-button
+          type="button"
+          (click)="back()"
+          class="skip-button"
+          href="#">Back
+  </button>
+  <button mat-raised-button
+          color="primary"
+          (click)="createAccounts()"
+          class="submit-button"
+          href="#">OnBoard
+  </button>
+</div>

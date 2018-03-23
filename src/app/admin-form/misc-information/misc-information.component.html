@@ -1,0 +1,54 @@
+<div class="wrapper">
+
+  <h3 class="form-title">Misc. Information</h3>
+
+  <h4>
+    Create accounts for:
+  </h4>
+  <section class="checkbox-group">
+    <mat-checkbox [(ngModel)]="hasHarvest">Harvest</mat-checkbox>
+    <mat-checkbox [(ngModel)]="hasGithub">Github</mat-checkbox>
+    <mat-checkbox [(ngModel)]="hasSlack">Slack</mat-checkbox>
+  </section>
+
+  <!--formControlName="group"-->
+  <h4>
+    Select which Google group {{user.firstName}} belongs to:
+  </h4>
+  <mat-radio-group [(ngModel)]="group" class="radio-group">
+    <mat-radio-button checked="true" value="Employee">Employee</mat-radio-button>
+    <mat-radio-button value="Contractor">Contractor</mat-radio-button>
+    <mat-radio-button value="Intern">Intern</mat-radio-button>
+  </mat-radio-group>
+
+  <mat-checkbox class="letter-checkbox" [(ngModel)]="doNotSendLetter">Do <b><u>NOT</u></b> send welcome letter
+  </mat-checkbox>
+
+  <div class="date-picker">
+    <mat-input-container>
+      <!--formControlName="startDate"-->
+      <input matInput [(ngModel)]="startDate" (ngModelChange)="updateStartDateError()" (click)="picker.open()" [matDatepicker]="picker"
+             placeholder="Choose a start date" [readonly]="true">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-input-container>
+    <mat-error *ngIf="startDateError">Start date is <strong>required.</strong></mat-error>
+  </div>
+
+  <div class="button-group">
+    <button mat-button
+            type="button"
+            (click)="back()"
+            class="skip-button"
+            href="#">Back
+    </button>
+    <button mat-raised-button
+            color="primary"
+            class="submit-button"
+            type="submit"
+            (click)="next()"
+            href="#">Next
+    </button>
+  </div>
+
+</div>

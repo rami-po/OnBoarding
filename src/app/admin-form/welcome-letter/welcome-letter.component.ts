@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AdminFormService} from "../admin-form.service";
 import { LETTER } from '../../consts'
+import {User} from "../user.model";
 
 @Component({
   selector: 'app-welcome-letter',
@@ -12,6 +13,7 @@ export class WelcomeLetterComponent implements OnInit {
 
   public welcomeLetter;
   public isLetterValid = true;
+  private user: User;
 
   public editorConfig = {
     "editable": false,
@@ -47,6 +49,12 @@ export class WelcomeLetterComponent implements OnInit {
     this.isLetterValid = this.adminFormService.isLetterValid.getValue();
     this.editorConfig.editable = this.isLetterValid;
     this.welcomeLetter = this.adminFormService.letter.getValue();
+
+    this.adminFormService.user.subscribe(
+      user => {
+        this.user = user;
+      }
+    );
   }
 
   reset() {
@@ -62,6 +70,19 @@ export class WelcomeLetterComponent implements OnInit {
     this.editorConfig.editable = !this.editorConfig.editable;
     this.isLetterValid = this.editorConfig.editable;
     this.adminFormService.isLetterValid.next(this.editorConfig.editable);
+  }
+
+  back() {
+    if (this.user.hasHarvest) {
+      this.adminFormService.setPage(3);
+    } else {
+      this.adminFormService.setPage(2);
+    }
+  }
+
+  next() {
+    this.adminFormService.setPage(5);
+    this.user.setLetter(this.welcomeLetter);
   }
 
 }

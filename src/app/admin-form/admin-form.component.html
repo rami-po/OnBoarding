@@ -5,84 +5,11 @@
     color="primary"
     mode={{mode}}>
   </mat-progress-bar>
-  <mat-card class="form-card">
-    <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-      <mat-input-container class="form-full-width">
-        <input
-          autocomplete="false"
-          type="text"
-          matInput placeholder="First Name"
-          formControlName="firstName">
-      </mat-input-container>
-      <mat-input-container class="form-full-width">
-        <input
-          autocomplete="false"
-          type="text"
-          matInput placeholder="Last Name"
-          formControlName="lastName">
-      </mat-input-container>
-      <mat-input-container class="form-full-width">
-        <input
-          autocomplete="false"
-          type="email"
-          matInput placeholder="Personal Email"
-          formControlName="personalEmail" email>
-      </mat-input-container>
-      <mat-input-container class="form-full-width">
-        <input
-          autocomplete="false"
-          type="text"
-          matInput placeholder="productOps Email"
-          formControlName="productOpsEmail">
-        <span matSuffix>@productOps.com</span>
-      </mat-input-container>
-
-      <section class="checkbox-group">
-        <mat-checkbox (click)="updateHarvest()">Harvest</mat-checkbox>
-        <mat-checkbox (click)="updateGithub()">Github</mat-checkbox>
-        <mat-checkbox (click)="updateSlack()">Slack</mat-checkbox>
-      </section>
-
-      <mat-radio-group formControlName="group">
-        <mat-radio-button checked="true" value="Employee">Employee</mat-radio-button>
-        <mat-radio-button value="Contractor">Contractor</mat-radio-button>
-        <mat-radio-button value="Intern">Intern</mat-radio-button>
-      </mat-radio-group>
-
-
-      <mat-select *ngIf="hasHarvest" placeholder="Projects" formControlName="project" name="project">
-        <mat-option *ngFor="let project of projects" [value]="project">
-          {{project.name}}
-        </mat-option>
-      </mat-select>
-
-      <div class="date-picker">
-        <mat-input-container>
-          <input formControlName="startDate" matInput [matDatepicker]="picker" placeholder="Choose a start date" [readonly]="true">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-        </mat-input-container>
-      </div>
-
-      <div class ="text-right">
-        <button mat-button
-                type="button"
-                (click)="saveForm()"
-                [routerLink]="'/admin/letter'"
-                class="skip-button"
-                href="#">Edit Welcome Letter</button>
-        <button mat-button
-                type="button"
-                (click)="back()"
-                class="skip-button"
-                href="#">Back</button>
-        <button mat-raised-button
-                color="primary"
-                class="submit-button"
-                type="submit"
-                href="#">Create Accounts</button>
-      </div>
-
-    </form>
+  <mat-card *ngIf="page != 4" class="form-card">
+    <app-user-information *ngIf="page == 1"></app-user-information>
+    <app-misc-information *ngIf="page == 2"></app-misc-information>
+    <app-harvest-information *ngIf="page == 3"></app-harvest-information>
+    <app-review-information *ngIf="page == 5"></app-review-information>
   </mat-card>
+  <app-welcome-letter *ngIf="page == 4" #welcomeLetter></app-welcome-letter>
 </div>

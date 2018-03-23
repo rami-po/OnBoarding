@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {User} from './user.model';
 import {AdminFormService} from './admin-form.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
@@ -28,13 +28,13 @@ export class AdminFormComponent {
   }
 }
 */
-export class AdminFormComponent implements OnInit {
+export class AdminFormComponent implements OnInit, OnDestroy {
   myForm: FormGroup;
   mode = 'indeterminate';
   hasHarvest = false;
   hasGithub = false;
   hasSlack = false;
-  projects: Project[];
+  public page;
 
   myQueryParams = [
     {id: 'hasGithub', param: this.hasGithub},
@@ -123,43 +123,33 @@ export class AdminFormComponent implements OnInit {
   }
 
   ngOnInit() {
-    let form = JSON.parse(sessionStorage.getItem('form'));
+    this.formService.loading.subscribe(
+      loading => {
+        if (loading) {
+          this.mode = 'indeterminate';
+        } else {
+          this.mode = 'determinate';
+        }
+      }
+    );
 
-    if (form == null) {
-      form = {
-        firstName: null,
-        lastName: null,
-        personalEmail: null,
-        productOpsEmail: null,
-        group: 'Employee',
-        project: null,
-        startDate: null
-      };
-    }
-
-    this.myForm = new FormGroup({
-      firstName: new FormControl(form.firstName, Validators.required),
-      lastName: new FormControl(form.lastName, Validators.required),
-      personalEmail: new FormControl(form.personalEmail, Validators.required),
-      productOpsEmail: new FormControl(form.productOpsEmail, Validators.required),
-      group: new FormControl(form.group, null),
-      project: new FormControl(form.project, null),
-      startDate: new FormControl(form.startDate != null ? new Date(form.startDate) : null, Validators.required)
-    });
-
+    this.formService.page.subscribe(
+      page => {
+        this.page = page;
+      }
+    );
 
     this.formService.getProjects()
       .subscribe(
-        (projects: Project[]) => {
+        () => {
           this.mode = 'determinate';
-          this.projects = projects.filter(project => project.name !== 'Internal');
-          this.projects.sort((a, b) => {
-            if (a.name < b.name) return -1;
-            else if (a.name > b.name) return 1;
-            else return 0;
-          });
         }
       );
+  }
+
+  ngOnDestroy() {
+    this.formService.setUser(null);
+    this.formService.setPage(1);
   }
 
   saveForm() {

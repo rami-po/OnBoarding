@@ -1,0 +1,12 @@
+.review-group {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+}
+
+.scrollable {
+  max-height: 75px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}

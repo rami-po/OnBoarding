@@ -11,7 +11,7 @@ export class User {
   hasGithub: boolean;
   hasSlack: boolean;
   group: string;
-  project: Project;
+  projects: Project[];
   startDate: string;
   isLetterValid: boolean;
   letter: string;
@@ -19,7 +19,7 @@ export class User {
   constructor(firstName: string, lastName: string,
               primaryEmail: string, productOpsEmail: string,
               hasHarvest: boolean, hasGithub: boolean,
-              hasSlack: boolean, group: string, project: Project,
+              hasSlack: boolean, group: string, projects: Project[],
               startDate: string, isLetterValid: boolean, letter: string) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -29,9 +29,57 @@ export class User {
     this.hasGithub = hasGithub;
     this.hasSlack = hasSlack;
     this.group = group;
-    this.project = project;
+    this.projects = projects;
     this.startDate = startDate;
     this.isLetterValid = isLetterValid;
+    this.letter = letter;
+  }
+
+  setFirstName(firstName) {
+    this.firstName = firstName;
+  }
+
+  setLastName(lastName) {
+    this.lastName = lastName;
+  }
+
+  setPersonalEmail(personalEmail) {
+    this.personalEmail = personalEmail;
+  }
+
+  setProductOpsEmail(productOpsEmail) {
+    this.productOpsEmail = productOpsEmail;
+  }
+
+  setHarvest(hasHarvest) {
+    this.hasHarvest = hasHarvest;
+  }
+
+  setGithub(hasGithub) {
+    this.hasGithub = hasGithub;
+  }
+
+  setSlack(hasSlack) {
+    this.hasSlack = hasSlack;
+  }
+
+  setGroup(group) {
+    this.group = group;
+  }
+
+  setProjects(projects) {
+    this.projects = projects;
+  }
+
+  setStartDate(startDate) {
+    this.startDate = startDate;
+  }
+
+  setLetterValidity(isLetterValid) {
+    this.isLetterValid = isLetterValid;
+  }
+
+  setLetter(letter) {
     this.letter = letter;
   }
 }

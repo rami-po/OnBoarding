@@ -1,0 +1,31 @@
+.container {
+  display: grid;
+  grid-template-columns: 150px 150px 150px 150px 150px;
+  grid-gap: 10px;
+  background-color: #fff;
+  color: #444;
+}
+
+.item {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 150px 150px 150px;
+  grid-gap: 10px;
+  max-height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.box {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}

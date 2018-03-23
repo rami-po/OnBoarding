@@ -62,3 +62,10 @@ mat-select {
   width: 50%;
   float: left;
 }
+
+.button-group {
+  padding: 30px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
